@@ -1,0 +1,48 @@
+.powered-by {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    color: $default-color;
+}
+
+.powered-by__head {
+    font-size: 12px;
+}
+
+.powered-by__link {
+    display: flex;
+    color: $default-color;
+    text-decoration: none;
+    text-align: center;
+
+    align-items: center;
+
+}
+
+.powered-by__name {
+    font-size: 12px;
+}
+
+.powered-by__avatar {
+    width: 25px;
+    height: 25px;
+}
+
+@media (min-width: $tabletWidth) {}
+
+@media (min-width: $desktopWidth) {
+    .powered-by__head {
+        font-size: 16px;
+    }
+
+    .powered-by__name {
+        font-size: 22px;
+    }
+
+    .powered-by__avatar {
+        width: 50px;
+        height: 50px;
+    }
+
+}

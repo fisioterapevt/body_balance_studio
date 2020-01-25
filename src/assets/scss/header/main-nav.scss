@@ -1,0 +1,217 @@
+@media(max-width: $desktopWidth) {
+  .main-nav {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    width: 55px;
+    height: 50px;
+
+    transition: right 0.5s linear;
+  }
+
+  .main-nav--closed .main-nav__list {
+    opacity: 0;
+
+    transition: opacity .5s ease-in;
+  }
+
+  .main-nav--opened {
+    right: 120px;
+
+    transition: right .5s linear;
+  }
+
+  .main-nav--opened .main-nav__list {
+    opacity: 1;
+
+    transition: opacity .5s ease-in;
+  }
+
+  // toogle Hamburger menu -closed- condition
+  .toggle {
+    position: absolute;
+    z-index: 100;
+    top: 25px;
+    right: 35px;
+
+    display: block;
+    width: 40px;
+    height: 40px;
+
+    font-size: 0;
+    background-color: transparent;
+
+    box-shadow: none;
+    overflow: hidden;
+    cursor: pointer;
+  }
+
+  .toggle span {
+    position: absolute;
+    top: 23px;
+    left: 10px;
+    right: 10px;
+
+    display: block;
+    height: 3px;
+
+    background: $primary-color;
+
+    border: none;
+
+    transition: background 0s 0.2s;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+
+      display: block;
+      width: 100%;
+      height: 3px;
+
+      background: $primary-color;
+      // плавно возвращает бургер в исходное состояние
+      transition: transform 0.2s ease-in, top 0.2s linear 0.2s;
+    }
+
+    &::before {
+      top: -8px;
+    }
+
+    &::after {
+      top: 8px;
+    }
+  }
+
+  .toggle--is-active span {
+    // делает прозрачным линию посередине
+    background: transparent;
+  }
+
+  // анимация происходит после нажатия меню-гамбургер.
+  // обратная анимация происходит в псевдоэлементах выше
+  // в обратном порядке
+  .toggle--is-active span::before {
+    transform: rotate(-45deg);
+    top: 0;
+    // анимируется top за время линейно, затем срабатывает transform
+    // за время ease-in с задержкой в n-секунд
+    transition: top 0.2s linear, transform 0.2s ease-in 0.3s;
+  }
+
+  .toggle--is-active span::after {
+    transform: rotate(45deg);
+    top: 0;
+    transition: top 0.2s linear, transform 0.2s ease-in 0.3s;
+  }
+
+  .main-nav__list {
+    display: flex;
+    flex-direction: column;
+
+    margin-top: 10px;
+    margin-left: 60px;
+
+    // width: 200px;
+    // position: absolute;
+    // top: 0;
+    // right: -95px;
+    // right: 0px;
+
+    // margin-right: -300px;
+
+    // transition: all ease 2s;
+    // z-index: 50;
+
+    background-color: rgb(177, 255, 170);
+
+
+  }
+
+  .main-nav__list--active {
+    // margin-right: 0;
+  }
+
+  .main-nav__link {
+    position: relative;
+    color: $text-color-default;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    font-family: $secondary-font;
+    font-size: $font-size-medium;
+    cursor: pointer;
+
+    &:hover {
+      color: $text-color-hover;
+      transition: color .4s ease-in-out;
+    }
+  }
+
+  .main-nav__link--active {
+    color: $text-color-active;
+    position: relative;
+  }
+}
+
+// desktop
+@media (min-width: $desktopWidth) {
+
+  // .main-nav {
+  //     display: flex;
+  //     width: 100%;
+  // }
+  .main-nav__list {
+    position: relative;
+    position: static;
+    display: flex;
+    margin-bottom: 40px;
+  }
+
+  .main-nav__link {
+    position: relative;
+    color: $text-color-default;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 16px;
+    padding: 0 14px;
+
+    &:hover {
+      color: $text-color-hover;
+      transition: color .4s ease-in-out;
+    }
+
+    &:hover::before {
+      content: "";
+      position: absolute;
+      right: 0;
+      left: 0;
+      bottom: 30px;
+      height: 1px;
+      background: $text-color-active;
+    }
+  }
+
+  .main-nav__link--active {
+    color: $text-color-active;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      right: 0;
+      left: 0;
+      bottom: 30px;
+      height: 4px;
+      background: $text-color-active;
+    }
+  }
+
+  .main-nav__toggle {
+    // toogle Hamburger menu hidden 
+    display: none;
+  }
+}

@@ -1,0 +1,58 @@
+// fonts
+$main-font: 'OpenSans', Helvetica, Arial, sans-serif;
+$secondary-font: 'Roboto', Helvetica, Arial, sans-serif;
+
+
+
+$font-weight-thin           : 100;
+$font-weight-light          : 300;
+$font-weight-default        : 400;
+$font-weight-bold           : 900;
+
+$font-size-smBig            : 18px;
+$font-size-default          : 16px;
+$font-size-smaller          : 12px;
+$font-size-medium           : 14px;
+$font-size-bigger           : 30px;
+
+// Size screen
+$bigDesktopWidth            : 2560px;
+$desktopWidth               : 1280px;
+$smDesktopWidth             : 1024px;
+$tabletWidth                 : 768px;
+$phoneWidth                 : 480px;
+$smPhoneWidth               : 360px;
+
+// Screen
+$retina-dpi                 : 144dpi;
+$retina-dppx                : 1.5dppx;
+
+// Text color
+$text-color-default         : #595959;
+$text-color-default-light   : #595959;
+$text-color-hover           : #efb821;
+$text-color-active          : #64c5c1;
+$text-color-success         : #7bc549;
+$text-color-average         : #e49a27;
+$text-color-danger          : #f01010;
+
+// Main color
+$default-color              : #ffffff;
+$primary-color              : #64c5c1;
+$success-color              : #26de81;
+$danger-color               : #fc5c65;
+$warning-color              : #fed330;
+$light-color                : #e6e6e6;
+$purple-color               : #8854d0;
+
+// Neutral Color
+$neutral-primary            : #303133;
+$neutral-regular            : #606266;
+$neutral-secondary          : #909399;
+$neutral-placeholder        : rgb(235, 235, 235);
+
+// Border Color
+$border-base                : #DCDFE6;
+$border-light               : #E4E7ED;
+$border-lighter             : #EBEEF5;
+$border-lightex             : #F2F6FC;

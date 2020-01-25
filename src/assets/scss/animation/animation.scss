@@ -1,0 +1,23 @@
+@keyframes fly-upper {
+
+    0%,
+    20%,
+    40%,
+    60%,
+    80%,
+    100% {
+      background-color: #ffffff;
+      -webkit-transform: scale(0.95);
+      transform: scale(0.95)
+    }
+  
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
+      background-color: rgb(196, 21, 21);
+      -webkit-transform: scale(1);
+      transform: scale(1)
+    }
+  }

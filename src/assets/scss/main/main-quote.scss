@@ -1,0 +1,32 @@
+.main-quote {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    max-width: $tabletWidth;
+    margin: 0 auto;
+    margin-bottom: 40px;
+}
+
+.main-quote__text {
+    font-size: $font-size-smaller;
+    line-height: 29px;
+
+    margin:  0 40px;
+}
+
+.main-quote__autor {
+    line-height: 39px;
+    margin-right: 40px;
+    text-align: right;
+}
+
+@media (min-width: $desktopWidth) {
+    .main-quote__text {
+        font-size: $font-size-default;
+    }
+
+    .main-quote__autor {
+        font-size: $font-size-smBig;
+    }
+}

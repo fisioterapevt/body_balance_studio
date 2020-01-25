@@ -1,0 +1,62 @@
+// mobile&table
+.top-bar__wrap {
+    display: none;
+}
+
+.top-bar__phone-icon {
+    position: fixed;
+    top: 124px;
+    left: 20px;
+
+    & svg {
+        width: 80px;
+        height: 80px;
+
+        color: $primary-color;
+    }
+
+}
+
+@media (min-width: $tabletWidth) {
+    .top-bar__phone-icon {
+        position: absolute;
+        top: 42px;
+        left: 50px;
+
+        & svg {
+            width: 80px;
+            height: 80px;
+
+        }
+    }
+}
+
+// desktop
+@media (min-width: $desktopWidth) {
+    .top-bar {
+        display: block;
+        width: 100%;
+        margin-bottom: 20px;
+        background-color: #e6e6e6;
+    }
+
+    .top-bar__phone-icon {
+        display: none;
+    }
+
+    .top-bar__wrap {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        max-width: $bigDesktopWidth;
+
+        margin: 0 auto;
+    }
+
+    .top-bar__contact-link {
+        color: $neutral-regular;
+        text-decoration: none;
+        margin-left: 40px;
+    }
+}

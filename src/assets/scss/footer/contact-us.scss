@@ -1,0 +1,24 @@
+.contact-us {
+    margin: 0 auto;
+    text-align: center;
+
+    color: $default-color;
+}
+
+.contact-us__head {
+    padding: 10px 0;
+}
+
+.contact-us__list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact-us__item {
+    padding-bottom: 10px;
+}
+
+.contact-us__link {
+    color: $default-color;
+}

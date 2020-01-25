@@ -1,0 +1,16 @@
+@media (min-width: $smDesktopWidth) {
+    .social {
+        display: flex;
+        align-items: center;
+
+        margin-right: 40px;
+    }
+
+    .social-icon {
+        color: $text-color-active;
+
+        &:hover {
+            color: $neutral-secondary;
+        }
+    }
+}
