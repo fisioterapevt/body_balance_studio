@@ -16,11 +16,11 @@ module.exports = {
   },
 
   entry: {
-    app: PATHS.src
+    app: PATHS.src // при смене app на другое имя соответственно меняется и название файлов app.min.js и app.min.css
   },
 
   output: {
-    filename: `${PATHS.assets}js/[name].js`,
+    filename: `${PATHS.assets}js/[name].min.js`,
     path: PATHS.dist,
     publicPath: `/`
 
@@ -76,7 +76,7 @@ module.exports = {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: `${PATHS.assets}css/[name].css`
+      filename: `${PATHS.assets}css/[name].min.css`
     }),
     new HtmlWebpackPlugin({
       hash: false,
