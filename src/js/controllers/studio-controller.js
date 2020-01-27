@@ -11,8 +11,6 @@ export default class MainStudioPageController {
 
         this._mainStudioComponent = new MainStudioComponent();
         this._aboutStudioComponent = new AboutStudioComponent();
-        // this._mainBlocksComponent = new MainBlocksComponent;
-        // this._mainQuotesComponent = new MainQuotesComponent;
     }
 
     render() {

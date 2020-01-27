@@ -6,6 +6,8 @@
     margin-bottom: 40px;
 
     position: relative;
+
+    cursor: pointer;
 }
 
 .main-blocks__list {
@@ -13,19 +15,19 @@
     flex-direction: column;
 
     width: 80%;
-    max-width: $smDesktopWidth;
+    max-width: $tabletWidth;
 
     position: relative;
 }
 
 .main-blocks__item {
-    // min-width: 400px;
-
-    min-height: 350px;
+    min-height: 420px;
 
     opacity: 0.7;
 
     position: relative;
+
+    cursor: pointer;
 
     overflow: hidden;
 
@@ -33,34 +35,31 @@
         // при ховере действия происходят в другом блоке
         animation-name: bounce;
         animation-duration: 0.7s;
-        // backface-visibility: hidden;
-        // perspective: 1000px;
-        transform: translate(-50%, -110%);
+        animation-fill-mode: forwards; // не дает вернуться обратно 
+        cursor: pointer;
     }
 
     &:hover>.main-blocks__hide {
-        animation-name: bounce-one;
-        animation-duration: 1s;
-        transition: 2s;
-        transform: translate(-50%, 10%);
+        animation-name: bounce-one; // подключает анимацию
+        animation-duration: 1s; // время действия анимации
+        animation-fill-mode: forwards; // не дает вернуться в исходное положение пока действует ховер 
 
         opacity: 1;
+        transition: 2s;
+        cursor: pointer;
     }
 }
 
 .main-blocks__slide {
-    display: flex;
-    flex-direction: column;
     align-items: center;
 
     width: 100%;
+
     position: absolute;
 
     top: 50%;
     left: 50%;
-    // animation-name: bounce;
-    // animation-duration: 0.5s;
-    transition: 0.5s; // время возврата в исходное состояние блока
+
     transform: translate(-50%, -50%);
 }
 
@@ -79,12 +78,17 @@
 }
 
 .main-blocks__slide-icon {
-    width: 80px;
-    height: 80px;
-    background-color: #fff;
-
-    margin-bottom: 20px;
+    display: flex;
+    margin-bottom: 40px;
+    justify-content: center;
+    & svg {
+        color: #fff;
+        width: 80px;
+        height: 80px;
+    }
 }
+
+
 
 .main-blocks__slide-head {
     text-align: center;
@@ -131,15 +135,15 @@
 }
 
 .main-blocks__item--first {
-    background-color: $warning-color;
+    background-color: rgb(253, 224, 224);
 }
 
 .main-blocks__item--second {
-    background-color: $success-color;
+    background-color: rgb(192, 255, 211);
 }
 
 .main-blocks__item--third {
-    background-color: $primary-color;
+    background-color: rgb(203, 206, 253);
 }
 
 @media (min-width: $desktopWidth) {
@@ -149,8 +153,8 @@
     }
 
     .main-blocks__item {
-        min-width: 400px;
-        min-height: 530px;
+        min-width: 335px;
+        min-height: 420px;
         margin: 0 10px;
     }
 
@@ -170,11 +174,11 @@
     }
 
     80% {
-        transform: translate(-50%, -120%);
+        transform: translate(-50%, -150%);
     }
 
     100% {
-        transform: translate(-50%, -110%);
+        transform: translate(-50%, -140%);
     }
 }
 
@@ -184,10 +188,10 @@
     }
 
     60% {
-        transform: translate(-50%, -10%);
+        transform: translate(-50%, -30%);
     }
 
     100% {
-        transform: translate(-50%, 10%);
+        transform: translate(-50%, -10%);
     }
 }

@@ -1,0 +1,47 @@
+.logo svg {
+    width: 130px;
+    height: 75px;
+
+    transition: margin-right linear 0.5s;
+}
+
+.logo {
+    transition: margin-right linear 0.5s;
+}
+
+.logo--active {
+    margin-right: 200px;
+    transition: margin-right linear 0.5s;
+}
+
+.footer-inner .logo {
+    margin: 20px;
+
+    & img {
+        width: 70px;
+        height: 34px;
+    }
+}
+
+@media (min-width: $tabletWidth) {
+    .logo svg {
+        width: 200px;
+        height: 85px;
+        transition: margin-right linear 0.5s;
+    }
+
+    .logo--active {
+        margin-right: 300px;
+        transition: margin-right linear 0.5s;
+    }
+
+}
+
+@media (min-width: $desktopWidth) {
+    .logo svg {
+        width: 291px;
+        height: 121px;
+
+        margin-bottom: 40px;
+    }
+}

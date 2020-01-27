@@ -1,5 +1,5 @@
 import HeaderNavComponent, {MenuItem} from '../components/header-nav';
-import HeaderLogoComponent from '../components/header-logo';
+import LogoComponent from '../components/logo';
 import HeaderTopBarComponent from '../components/header-top-bar';
 import SocialComponent from '../components/social';
 
@@ -10,7 +10,7 @@ export default class HeaderController {
     this._container = container;
     this._pageModel = pageModel;
 
-    this._headerLogoComponent = new HeaderLogoComponent();
+    this._logoComponent = new LogoComponent();
     this._headerNavComponent = new HeaderNavComponent();
     this._headerTopBarComponent = new HeaderTopBarComponent();
     this._socialComponent = new SocialComponent();
@@ -23,7 +23,7 @@ export default class HeaderController {
     const topBarWrap = this._headerTopBarComponent.getElement().querySelector(`.top-bar__wrap`);
     render(topBarWrap, this._socialComponent, RenderPosition.BEFOREEND)
     render(container, this._headerTopBarComponent, RenderPosition.BEFOREEND)
-    render(container, this._headerLogoComponent, RenderPosition.BEFOREEND)
+    render(container, this._logoComponent, RenderPosition.BEFOREEND)
     render(container, this._headerNavComponent, RenderPosition.BEFOREEND)
 
     this._headerNavComponent.setClickOnHamburgerMenuHandler((evt) => { // realized logic open/close menu

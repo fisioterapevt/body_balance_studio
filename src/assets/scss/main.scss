@@ -5,7 +5,6 @@
 @import "/header/header";
 @import "/header/header-inner";
 @import "/header/top-bar";
-@import "/header/logo";
 @import "/header/main-nav";
 
 @import "/main/main";
@@ -15,12 +14,16 @@
 @import "/main/main-quote";
 
 @import "/footer/footer";
+@import "/footer/footer-inner";
 @import "/footer/contact-us";
 @import "/powered/powered-by";
 
 @import "/animation/animation";
 
 @import "/social/social";
+@import "/location/location";
+@import "/logo/logo";
+@import "/map/map";
 
 
 
@@ -37,7 +40,7 @@ body {
     line-height: 26px;
     color: $text-color-default;
 
-    background: rgb(242, 255, 187);
+    // background: rgb(242, 255, 187);
 }
 
 

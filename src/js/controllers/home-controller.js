@@ -2,6 +2,8 @@ import MainSliderComponent from '../components/page-home/main-slider';
 import MainHeadComponent from '../components/page-home/main-head';
 import MainBlocksComponent from '../components/page-home/main-blocks';
 import MainQuotesComponent from '../components/page-home/main-quote';
+import LocationComponent from '../components/location/location';
+import MapComponent from '../components/map';
 
 import {render, RenderPosition} from '../utils/render'
 
@@ -13,6 +15,8 @@ export default class HomePageController {
     this._mainHeadComponent = new MainHeadComponent;
     this._mainBlocksComponent = new MainBlocksComponent;
     this._mainQuotesComponent = new MainQuotesComponent;
+    this._locationComponent = new LocationComponent();
+    this._mapComponent = new MapComponent();
     }
 
     render() {
@@ -51,6 +55,8 @@ export default class HomePageController {
         render(container, this._mainHeadComponent, RenderPosition.BEFOREEND); // заголовок на главной
         render(container, this._mainBlocksComponent, RenderPosition.BEFOREEND); // блоки на главной
         render(container, this._mainQuotesComponent, RenderPosition.BEFOREEND); // цитата на главной
+        render(container,  this._locationComponent, RenderPosition.BEFOREEND); // адрес на главной
+        render(container, this._mapComponent, RenderPosition.BEFOREEND); // карта на главной
       }
 
     _changeSlide(sldrElems, current) {

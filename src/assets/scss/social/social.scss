@@ -1,4 +1,26 @@
-@media (min-width: $smDesktopWidth) {
+.social {
+    display: flex;
+    align-items: center;
+    // justify-content: center;
+
+    // margin-right: 40px;
+}
+
+.social-icon svg{
+    width: 65px;
+    height: 65px;
+}
+
+.footer-inner .social {
+    margin-top: 18px;
+
+    & svg {
+        width: 68px;
+        height: 68px;
+    }
+}
+
+@media (min-width: $desktopWidth) {
     .social {
         display: flex;
         align-items: center;
@@ -6,11 +28,24 @@
         margin-right: 40px;
     }
 
-    .social-icon {
+    .social-icon svg{
         color: $text-color-active;
 
         &:hover {
             color: $neutral-secondary;
+        }
+    }
+
+    .footer-inner .social {
+        // background-color: #fff;
+        // width: 100px;
+        // height: 100px;
+
+        margin-left: 124px;
+
+        & svg {
+            width: 68px;
+            height: 68px;
         }
     }
 }

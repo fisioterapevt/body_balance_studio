@@ -1,6 +1,9 @@
 .contact-us {
-    margin: 0 auto;
-    text-align: center;
+    // display: none;
+    // margin: 0 auto;
+
+    margin-left: 40px;
+    text-align: flex-start;
 
     color: $default-color;
 }
@@ -15,10 +18,10 @@
     align-items: center;
 }
 
-.contact-us__item {
-    padding-bottom: 10px;
-}
+// .contact-us__item {
+//     padding-bottom: 10px;
+// }
 
-.contact-us__link {
-    color: $default-color;
-}
+// .contact-us__link {
+//     color: $default-color;
+// }
