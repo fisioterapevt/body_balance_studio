@@ -1,10 +1,12 @@
 .main-slider {
     position: relative;
     background-color: $neutral-secondary;
-    max-width: $bigDesktopWidth;
+    // max-width: $bigDesktopWidth;
 
     margin: 0 auto;
     margin-bottom: 70px;
+
+    width: 100%;
 }
 
 .main-slider__list {

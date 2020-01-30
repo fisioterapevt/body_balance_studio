@@ -7,26 +7,64 @@
     width: 55px;
     height: 50px;
 
-    -webkit-transition: right 0.5s linear;
-    transition: right 0.5s linear;
+    transition: right 0.7s linear; // возвращает в исходное положение за 0.7 сек
   }
 
-  .main-nav--closed .main-nav__list {
+  .main-nav__item {
+    // убирает видимость с последнего элемента к первому
     opacity: 0;
+    transition: 0.2s;
 
-    transition: opacity .5s ease-in;
+    &:nth-child(1) {
+      transition-delay: 0.45s;
+    }
+
+    &:nth-child(2) {
+      transition-delay: 0.35s;
+    }
+
+    &:nth-child(3) {
+      transition-delay: 0.25s;
+    }
+
+    &:nth-child(4) {
+      transition-delay: 0.15s;
+    }
+
+    &:nth-child(5) {
+      transition-delay: 0.05s;
+    }
   }
 
   .main-nav--opened {
     right: 120px;
-    -webkit-transition: right 0.5s linear;
-    transition: right .5s linear;
-  }
+    transition: right 0.5s linear;
 
-  .main-nav--opened .main-nav__list {
-    opacity: 1;
+    & .main-nav__item {
+      // добавляет видимость с первого элемента к последнему
+      opacity: 1;
+      transition: opacity 0.5s linear;
 
-    transition: opacity .5s ease-in;
+      &:nth-child(1) {
+        transition-delay: 0.1s;
+      }
+
+      &:nth-child(2) {
+        transition-delay: 0.2s;
+      }
+
+      &:nth-child(3) {
+        transition-delay: 0.3s;
+      }
+
+      &:nth-child(4) {
+        transition-delay: 0.4s;
+      }
+
+      &:nth-child(5) {
+        transition-delay: 0.5s;
+      }
+    }
   }
 
   // toogle Hamburger menu -closed- condition
@@ -127,7 +165,7 @@
     // transition: all ease 2s;
     // z-index: 50;
 
-    background-color: rgb(177, 255, 170);
+    // background-color: rgb(177, 255, 170);
 
 
   }
@@ -138,22 +176,17 @@
 
   .main-nav__link {
     position: relative;
-    color: $text-color-default;
+    color: $text-color-primary;
     text-decoration: none;
     text-transform: uppercase;
 
     font-family: $secondary-font;
     font-size: $font-size-medium;
     cursor: pointer;
-
-    &:hover {
-      color: $text-color-hover;
-      transition: color .4s ease-in-out;
-    }
   }
 
   .main-nav__link--active {
-    color: $text-color-active;
+    color: $text-color-secondary;
     position: relative;
   }
 }
@@ -174,7 +207,7 @@
 
   .main-nav__link {
     position: relative;
-    color: $text-color-default;
+    color: $text-color-primary;
     text-decoration: none;
     text-transform: uppercase;
     font-size: 16px;
@@ -185,19 +218,19 @@
       transition: color .4s ease-in-out;
     }
 
-    &:hover::before {
-      content: "";
-      position: absolute;
-      right: 0;
-      left: 0;
-      bottom: 30px;
-      height: 1px;
-      background: $text-color-active;
-    }
+    // &:hover::before {
+    //   content: "";
+    //   position: absolute;
+    //   right: 0;
+    //   left: 0;
+    //   bottom: 30px;
+    //   height: 1px;
+    //   background: $text-color-primary;
+    // }
   }
 
   .main-nav__link--active {
-    color: $text-color-active;
+    color: $text-color-secondary;
     position: relative;
 
     &::before {
@@ -207,7 +240,7 @@
       left: 0;
       bottom: 30px;
       height: 4px;
-      background: $text-color-active;
+      background: $text-color-secondary;
     }
   }
 

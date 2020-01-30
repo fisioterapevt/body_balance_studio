@@ -1,8 +1,8 @@
 import HomePageController from './home-controller';
 import StudioPageController from './studio-controller';
 
-const renderHomePage = (container) => {
-  const homePageController = new HomePageController(container);
+const renderHomePage = (container, pageModel) => {
+  const homePageController = new HomePageController(container, pageModel);
   homePageController.render();
   return homePageController
 }
@@ -25,7 +25,7 @@ export default class PageController {
 
   render() {
     if (this._pageModel._activeMenuItem === `home`) {
-     renderHomePage(this._container);
+     renderHomePage(this._container, this._pageModel);
     }
   }
 
@@ -50,7 +50,7 @@ export default class PageController {
         break;
       case `home`:
         removePage;
-        renderHomePage(this._container);
+        renderHomePage(this._container, this._pageModel);
         break;
     }
     return this._container;

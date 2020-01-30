@@ -4,8 +4,8 @@ const createTopBarHeaderTemplate = () => {
     return (
         `<div class="top-bar">
             <a href="tel:+78125556666" class="top-bar__phone-icon" title="phone">
-                <svg width="30" height="30" viewBox="0 0 50 50">
-                    <use xlink:href="assets/img/sprite.svg#logo-phone"></use>
+                <svg width="512" height="512" viewBox="0 0 512 512">
+                    <use xlink:href="assets/img/sprite.svg#phone-volume-icon"></use>
                 </svg>
              </a>
             <div class="top-bar__wrap">

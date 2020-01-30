@@ -28,17 +28,26 @@ $retina-dpi                 : 144dpi;
 $retina-dppx                : 1.5dppx;
 
 // Text color
-$text-color-default         : #595959;
-$text-color-default-light   : #595959;
+$text-color-default         : #585858;
+$text-color-default-light   : #686868;
+$text-color-default-dark    : #505050;
 $text-color-hover           : #efb821;
 $text-color-active          : #64c5c1;
 $text-color-success         : #7bc549;
 $text-color-average         : #e49a27;
 $text-color-danger          : #f01010;
 
+// Text specific
+$text-color-primary         : #a08a84;
+$text-color-secondary       : #5a4a45;
+$text-color-tertiary        : #505050;
+
 // Main color
 $default-color              : #ffffff;
-$primary-color              : #64c5c1;
+$primary-color              : #a08a84;
+$primary-color-light        : #cab3ae;
+$secondary-color            : #606c50;
+$tertiary-color             : #b6869d;
 $success-color              : #26de81;
 $danger-color               : #fc5c65;
 $warning-color              : #fed330;

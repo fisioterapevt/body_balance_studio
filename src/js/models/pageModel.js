@@ -20,4 +20,8 @@ export default class PageModel {
     _callHandlers(handlers, menuItem) { // приходит method из page-control  __onMenuItemChange
         handlers.forEach((handler) => handler(menuItem)); // handler() - this._menuItemChangeHandlers
     }
+
+    _setChangeSizeScreenHandler(handler) { // слушает изменения в размере броузера
+        window.addEventListener('resize', handler);
+      }
 }

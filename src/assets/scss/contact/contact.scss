@@ -1,0 +1,143 @@
+.contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    width: 100%;
+    // background-color: rgb(168, 252, 200);
+}
+
+.contact-us {
+    width: 70%;
+    margin-left: 75px;
+
+    // background-color: rgb(199, 148, 247);
+}
+
+.contact-us__item {
+    margin-bottom: 20px;
+}
+
+.contact-us__head {
+    display: none;
+}
+
+.contact-us__link {
+    position: relative;
+
+    text-decoration: none;
+    color: $text-color-default;
+}
+
+.contact-us__location {
+    position: relative;
+
+    &::before {
+        display: block;
+        position: absolute;
+        content: "";
+        width: 24px;
+        height: 24px;
+        background-image: url("/assets/img/pin-location.svg");
+        background-size: 24px 24px;
+        background-repeat: no-repeat;
+
+        top: 0;
+        left: -38px;
+    }
+}
+
+.contact-us__tel {
+    position: relative;
+
+    &::before {
+        display: block;
+        position: absolute;
+        content: "";
+        width: 20px;
+        height: 20px;
+        background-image: url("/assets/img/telephone-handle-icon.svg");
+        background-size: 20px 20px;
+        background-repeat: no-repeat;
+
+        top: 0;
+        left: -38px;
+    }
+}
+
+.contact-us__email {
+    position: relative;
+
+    &::before {
+        display: block;
+        position: absolute;
+        content: "";
+        width: 24px;
+        height: 24px;
+        background-image: url("/assets/img/email-message.svg");
+        background-size: 20px 20px;
+        background-repeat: no-repeat;
+
+        top: 0;
+        left: -38px;
+    }
+}
+
+.contact-us__open-hours {
+    position: relative;
+
+    &::before {
+        display: block;
+        position: absolute;
+        content: "";
+        width: 24px;
+        height: 24px;
+        background-image: url("/assets/img/clock-icon.svg");
+        background-size: 24px 24px;
+        background-repeat: no-repeat;
+
+        top: 0;
+        left: -38px;
+    }
+}
+
+@media (min-width: $tabletWidth) {
+    .contact-us__list {
+        margin: 0 auto;
+        // background-color: rgb(148, 158, 247);
+        display: flex;
+        flex-direction: column-reverse;
+
+        // justify-content: space-between;
+
+        // flex-wrap: wrap;
+    }
+
+    .contact {
+        display: flex;
+        flex-direction: row;
+        // justify-content: center;
+        // align-items: center;
+
+        width: 80%;
+        // background-color: rgb(168, 252, 200);
+    }
+
+    .contact-us {
+        // margin-left: 38px;
+    
+        // background-color: rgb(199, 148, 247);
+    }
+
+
+}
+
+@media (min-width: $desktopWidth) {
+    .contact-us__open-hours {
+        display: none;
+    }
+    .contact-us  a{
+        color: $text-color-default-light;
+    }
+}

@@ -1,6 +1,7 @@
 export const RenderPosition = {
   AFTERBEGIN: `afterbegin`,
-  BEFOREEND: `beforeend`
+  BEFOREEND: `beforeend`,
+  AFTER: `after`
 };
 
 export const render = (container, component, place) => { // вставляет элемент в указанное место
@@ -10,6 +11,9 @@ export const render = (container, component, place) => { // вставляет �
         break;
       case RenderPosition.BEFOREEND:
         container.append(component.getElement());
+        break;
+      case RenderPosition.AFTER:
+        container.after(component.getElement());
         break;
     }
   };

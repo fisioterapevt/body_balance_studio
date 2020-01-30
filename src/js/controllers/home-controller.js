@@ -1,28 +1,33 @@
+import HomeWrapComponent from '../components/page-home/home-wrap';
 import MainSliderComponent from '../components/page-home/main-slider';
 import MainHeadComponent from '../components/page-home/main-head';
 import MainBlocksComponent from '../components/page-home/main-blocks';
 import MainQuotesComponent from '../components/page-home/main-quote';
-import LocationComponent from '../components/location/location';
+import ContactComponent from '../components/contact/contact';
 import MapComponent from '../components/map';
 
-import {render, RenderPosition} from '../utils/render'
+import {render, remove, RenderPosition} from '../utils/render'
 
 export default class HomePageController {
-    constructor(container) {
+    constructor(container, pageModel) {
     this._container = container;
+    this._pageModel = pageModel;
 
-    this._mainSliderComponent = new MainSliderComponent;
-    this._mainHeadComponent = new MainHeadComponent;
-    this._mainBlocksComponent = new MainBlocksComponent;
-    this._mainQuotesComponent = new MainQuotesComponent;
-    this._locationComponent = new LocationComponent();
+    this._homeWrapComponent = new HomeWrapComponent();
+    this._mainSliderComponent = new MainSliderComponent();
+    this._mainHeadComponent = new MainHeadComponent();
+    this._mainBlocksComponent = new MainBlocksComponent();
+    this._mainQuotesComponent = new MainQuotesComponent();
+    this._contactComponent = new ContactComponent();
     this._mapComponent = new MapComponent();
     }
 
     render() {
         const container = this._container.getElement();
+        render(container, this._homeWrapComponent, RenderPosition.BEFOREEND);
 
-        render(container, this._mainSliderComponent, RenderPosition.BEFOREEND); // отрисовывается слайдер на главной странице
+        const homeContainer = this._homeWrapComponent.getElement();
+        render(homeContainer, this._mainSliderComponent, RenderPosition.BEFOREEND); // отрисовывается слайдер на главной странице
 
         const sldrElems = this._mainSliderComponent.getElement().querySelectorAll(`.main-slider__item`); // массив слайдеров
         let current = 0; // по умолчанию индекс текущего слайдера
@@ -52,11 +57,28 @@ export default class HomePageController {
           this._changeSlide(sldrElems, current)
         });
 
-        render(container, this._mainHeadComponent, RenderPosition.BEFOREEND); // заголовок на главной
-        render(container, this._mainBlocksComponent, RenderPosition.BEFOREEND); // блоки на главной
-        render(container, this._mainQuotesComponent, RenderPosition.BEFOREEND); // цитата на главной
-        render(container,  this._locationComponent, RenderPosition.BEFOREEND); // адрес на главной
-        render(container, this._mapComponent, RenderPosition.BEFOREEND); // карта на главной
+        render(homeContainer, this._mainHeadComponent, RenderPosition.BEFOREEND); // заголовок на главной
+        render(homeContainer, this._mainBlocksComponent, RenderPosition.BEFOREEND); // блоки на главной
+        render(homeContainer, this._mainQuotesComponent, RenderPosition.BEFOREEND); // цитата на главной
+
+        if (window.innerWidth < 1280) {
+          render(homeContainer,  this._contactComponent, RenderPosition.BEFOREEND); // вставляет адрес с картой на главной  странице после цитаты
+            const contactContainer = container.querySelector(`.home-wrap .contact`);
+            render(contactContainer, this._mapComponent, RenderPosition.BEFOREEND); // карта на главной в разделе контактов
+          } else {
+            remove(this._contactComponent);
+          }
+
+          this._pageModel._setChangeSizeScreenHandler(() => {
+            if (window.innerWidth < 1280) { //  если ширина экрана больше 1280
+              render(homeContainer,  this._contactComponent, RenderPosition.BEFOREEND); // вставляет адрес с картой на главной  странице после цитаты
+              const contact = homeContainer.querySelector(`.home-wrap .contact`);
+              render(contact, this._mapComponent, RenderPosition.BEFOREEND);
+            } else {
+              remove(this._contactComponent);
+              // remove(this._mapComponent);
+            }
+          });
       }
 
     _changeSlide(sldrElems, current) {

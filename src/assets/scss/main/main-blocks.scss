@@ -31,6 +31,8 @@
 
     overflow: hidden;
 
+    margin-bottom: 5px;
+
     &:hover>.main-blocks__slide {
         // при ховере действия происходят в другом блоке
         animation-name: bounce;
@@ -135,15 +137,21 @@
 }
 
 .main-blocks__item--first {
-    background-color: rgb(253, 224, 224);
+    background-color: $primary-color-light;
 }
 
 .main-blocks__item--second {
-    background-color: rgb(192, 255, 211);
+    background-color:$primary-color-light;
 }
 
 .main-blocks__item--third {
-    background-color: rgb(203, 206, 253);
+    background-color: $primary-color-light;
+}
+
+@media (min-width: $desktopWidth) {
+    .main-blocks__item {
+        min-height: 395px;
+    }
 }
 
 @media (min-width: $desktopWidth) {

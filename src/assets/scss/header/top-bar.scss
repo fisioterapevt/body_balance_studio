@@ -1,31 +1,33 @@
 // mobile&table
+.top-bar {
+    position: relative;
+}
 .top-bar__wrap {
     display: none;
 }
 
 .top-bar__phone-icon {
     position: fixed;
-    top: 124px;
-    left: 20px;
+    top: 24px;
+    left: 24px;
 
     & svg {
-        width: 48px;
-        height: 48px;
+        width: 24px;
+        height: 24px;
 
-        color: $primary-color;
+        color: #a08a84;
     }
 
 }
 
 @media (min-width: $tabletWidth) {
     .top-bar__phone-icon {
-        position: absolute;
-        top: 42px;
-        left: 50px;
+        top: 30px;
+        left: 30px;
 
         & svg {
-            width: 80px;
-            height: 80px;
+            width: 42px;
+            height: 42px;
 
         }
     }

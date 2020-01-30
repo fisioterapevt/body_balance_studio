@@ -1,31 +1,29 @@
 .header-inner {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 
     width: 100%;
+
+    background-color: $default-color;
 }
 
 @media(max-width: $desktopWidth) {
     .header-inner {
         position: fixed;
-        display: flex;
         top: 0;
         left: 0;
 
-        justify-content: center;
         z-index: 200;
-
-
         min-height: 100px;
-        background: $neutral-placeholder;
-
-        transition: min-height linear .3s;
+        transition: min-height linear .5s;
     }
 
     .header-inner--active {
-        min-height: 155px;
-        transition: min-height linear .3s;
+        min-height: 180px;
+        transition: min-height linear 0.5s;
     }
+
 }
