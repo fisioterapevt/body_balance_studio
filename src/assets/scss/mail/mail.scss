@@ -1,0 +1,288 @@
+.overlay {
+    position: fixed;
+    //   display: none; /* Hidden by default */
+    width: 100%;
+    /* Full width (cover the whole page) */
+    height: 100%;
+    /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Black background with opacity */
+    z-index: 1000;
+    /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer;
+    /* Add a pointer on hover */
+}
+
+.mail-form {
+    position: fixed;
+
+    width: 80%;
+    padding: 25px;
+    border: 1px solid #383838;
+    background: #D1D1D1;
+    /* My stripped background */
+    background: repeating-linear-gradient(-45deg, $primary-color-light, $primary-color-light 30px, #F2F2F2 30px, #F2F2F2 40px, $tertiary-color 40px, $tertiary-color 70px, #F2F2F2 70px, #F2F2F2 80px);
+    border-radius: 8px;
+    box-shadow: 0px 1px 6px #3F3F3F;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    &::after {
+        background: #F9F9F9;
+        margin: 10px;
+        position: absolute;
+        content: "";
+        bottom: 0;
+        left: 0;
+        right: 0;
+        top: 0;
+        z-index: -1;
+        border: 1px #E5E5E5 solid;
+        border-radius: 8px;
+    }
+
+    .mail-form__close {
+        position: relative;
+    }
+
+    .mail-form__close-btn {
+        position: absolute;
+        top: -10px;
+        right: -14px;
+
+        background-color: transparent;
+        cursor: pointer;
+
+        & svg {
+            width: 40px;
+            height: 40px;
+            color: $tertiary-color;
+        }
+    }
+
+    // width: 100%;
+    // height: 100%;
+
+    // top: 50%;
+    // left: 50%;
+
+    // transform: translate(-50%, -50%);
+
+    // z-index: 1000;
+
+    & legend {
+        position: relative;
+        font-family: $secondary-font;
+        font-weight: $font-weight-bold;
+        font-size: 18px;
+        padding: 0;
+
+        margin: 0 auto;
+
+        // margin-bottom: 15px;
+
+        color: #8C8C8C;
+
+        &::after {
+            font-size: 15px;
+            color: #D6CFCB;
+            content: '@';
+            text-align: center;
+            display: block;
+            width: 100%;
+
+            text-shadow: 0px 1px 0px #fff;
+
+            // margin-top: 10px;
+        }
+
+        &:before {
+            position: absolute;
+            bottom: 11px;
+            content: ' ';
+            text-align: center;
+            display: block;
+            height: 2px;
+            width: 100%;
+            background: linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(182, 180, 180, 0.7) 42%, rgba(180, 178, 178, 0) 43%, rgba(168, 166, 166, 0) 50%, rgba(180, 178, 178, 0) 57%, rgba(182, 180, 180, 0.7) 58%, rgba(238, 237, 237, 0.3) 90%, rgba(255, 255, 255, 0) 100%);
+            /* W3C */
+        }
+    }
+}
+
+// form {
+//     width: 100%;
+// }
+
+/** we remove the red glow around required fields since we are already using the red star */
+// input:required, textarea:required {
+// 	-moz-box-shadow:none; 
+// 	-webkit-box-shadow:none; 
+// 	-o-box-shadow:none; 
+// 	box-shadow:none; 
+// }
+/** inputs and textarea**/
+
+.mail-form__control {
+    height: 20px;
+}
+
+.mail-form__textarea {
+    min-height: 100px;
+    resize: vertical
+}
+
+.mail-form__control,
+.mail-form__textarea {
+    outline: none;
+    display: block;
+    width: 100%;
+    padding: 16px 8px;
+    border: 1px dashed $border-base;
+    color: $text-color-default-dark;
+    font-size: $font-size-medium;
+    border-radius: 2px;
+    transition: background 0.2s linear,
+        box-shadow 0.6s linear;
+
+    &:active,
+    &:focus {
+        background: $neutral-placeholder;
+        border: dashed 1px$neutral-secondary;
+        box-shadow: 2px 2px 7px $border-lighter inset;
+    }
+
+    &::placeholder {
+        color: $text-color-default-lighter;
+        font-style: italic;
+    }
+}
+
+/** Styling the send button **/
+.mail-form__btn {
+    display: block;
+    width: 100%;
+    cursor: pointer;
+    background: none;
+    border: none;
+
+    color: $text-color-default-light;
+    font-size: $font-size-medium;
+
+    padding: 10px 15px;
+    margin: 0 auto;
+    margin-top: 15px;
+
+    border: 1px solid $border-light;
+    text-shadow: 0px 1px 1px #E8E8E8;
+    background: $neutral-placeholder;
+    background: linear-gradient(top, $neutral-placeholder-dark 1%, $neutral-placeholder 100%);
+    border-radius: 5px;
+    box-shadow: 0px 1px 1px $default-color inset, 0 0 0px 3px $border-light;
+    transition: all 0.2s linear;
+
+    &:hover {
+        color: #8f8f8f;
+        border-color: #CECECE;
+        background: linear-gradient(top, $neutral-placeholder-darker 0%, $neutral-placeholder 100%);
+        box-shadow: 0px 1px 1px $default-color inset, 0 0 0px 3px $border-lighter;
+    }
+
+    &:active,
+    &:focus {
+        position: relative;
+        top: 1px;
+        color: $text-color-default-light;
+        background: linear-gradient(top, #dfdfdf 0%, $neutral-placeholder 100%);
+        box-shadow: 0px -1px 1px $default-color inset, 0 0 0px 3px $border-lighter;
+    }
+}
+
+label {
+    color: $text-color-default-light;
+    transition: color 1s ease;
+}
+
+label:hover {
+    color: #191919;
+}
+
+label:before {
+    color: #C1BFBD;
+    transition: color 1s ease;
+}
+
+label:hover:before {
+    color: #969696;
+    transition: color 1s ease;
+}
+
+p {
+    margin-bottom: 20px;
+}
+
+.indication {
+    color: #878787;
+    font-size: 12px;
+    font-style: italic;
+    text-align: right;
+    padding-right: 10px;
+}
+
+.required {
+    color: #E5224C;
+}
+
+// .mail-form__btn:active,
+// .mail-form__btn:focus{
+// 	position:relative;
+// 	top:1px;
+// 	color:#515151;
+// 	background: linear-gradient(top,  rgba(234,234,234,1) 0%,rgba(242,242,242,1) 100%);
+// 	box-shadow:0px -1px 1px #FFF inset, 0 0 0px 5px #E0E0E0;
+// }
+
+/** adding our icon font !! */
+// @font-face {
+// 	// font-family: 'IconicStroke';
+// 	src: url('font/iconic_stroke-webfont.eot');
+// 	src: url('font/iconic_stroke-webfont.eot?#iefix') format('embedded-opentype'),
+// 	url('font/iconic_stroke-webfont.woff') format('woff'),
+// 	url('font/iconic_stroke-webfont.ttf') format('truetype'),
+// 	url('font/iconic_stroke-webfont.svg#IconicStrokeRegular') format('svg');
+// 	font-weight: normal;
+// 	font-style: normal;
+// }
+
+// .iconic:before{
+// 	font-size:25px;
+// 	// font-family: "IconicStroke";
+// }
+// .iconic.link:before { content: '/'; }
+// .iconic.quote-alt:before { content: "'"; }
+// .iconic.comment:before { content: "q"; }
+// .iconic.user:before { content: "u"; }
+// .iconic.mail-alt:before { content: "M"; }
+
+
+@media (min-width: $tabletWidth) {
+    .mail-form {
+        width: 60%;
+    }
+
+}
+
+@media (min-width: $desktopWidth) {
+    .mail-form {
+        width: 550px;
+        min-height: 200px;
+        padding: 30px;
+    }
+
+}

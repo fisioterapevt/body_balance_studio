@@ -16,6 +16,7 @@
 }
 
 .contact-us__item {
+    cursor: pointer;
     margin-bottom: 20px;
 }
 
@@ -66,8 +67,10 @@
     }
 }
 
-.contact-us__email {
+.contact-us__mail {
     position: relative;
+    text-decoration: none;
+    color: $text-color-default;
 
     &::before {
         display: block;
@@ -91,14 +94,14 @@
         display: block;
         position: absolute;
         content: "";
-        width: 24px;
-        height: 24px;
+        width: 40px;
+        height: 40px;
         background-image: url("/assets/img/clock-icon.svg");
-        background-size: 24px 24px;
+        background-size: 40px 40px;
         background-repeat: no-repeat;
 
-        top: 0;
-        left: -38px;
+        top: -7px;
+        left: -47px;
     }
 }
 

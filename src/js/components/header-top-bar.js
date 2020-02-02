@@ -2,7 +2,7 @@ import AbstractComponent from './abstract-component';
 
 const createTopBarHeaderTemplate = () => {
     return (
-        `<div class="top-bar">
+        `<container class="top-bar">
             <a href="tel:+78125556666" class="top-bar__phone-icon" title="phone">
                 <svg width="512" height="512" viewBox="0 0 512 512">
                     <use xlink:href="assets/img/sprite.svg#phone-volume-icon"></use>
@@ -13,7 +13,7 @@ const createTopBarHeaderTemplate = () => {
                  <span>+7 (777) 777-77-77</span>
                </a>
             </div>
-        </div>`
+        </container>`
     );
 };
 

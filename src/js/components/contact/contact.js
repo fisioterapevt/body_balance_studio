@@ -3,7 +3,7 @@ import AbstractComponent from '../abstract-component';
 const createContactTemplate = () => {
     return (
         `<section class="contact">
-            <div class="contact-us">
+            <section class="contact-us">
                 <h2 class="contact-us__head">
                     Остались вопросы? Свяжитесь с нами!
                  </h2>
@@ -19,8 +19,8 @@ const createContactTemplate = () => {
                          </a>
                     </li>
                     <li class="contact-us__item">
-                        <a class="contact-us__link" href="mail@bodybalance.kz">
-                            <span class="contact-us__email">mail@bodybalance.kz</span>
+                        <a class="contact-us__mail" href="mailto:info@bodybalance.kz">
+                            <span>info@bodybalance.kz</span>
                         </a>
                     </li>
                     <li class="contact-us__item">
@@ -31,12 +31,29 @@ const createContactTemplate = () => {
                         </div>
                     </li>
                 </ul>
-            </div>`
+        </section>
+        <section class="map">
+            <h2 class="visually-hidden">Пилатес студия на карте города</h2>
+            <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A59bbcaa30455e57a81c5202af2f1678d83a77961b5ce07b553a3656a59840780&amp;source=constructor" width="500" height="400" frameborder="0"></iframe>
+        </section>`
     );
 };
 
 export default class Contact extends AbstractComponent {
+    constructor() {
+        super();
+    }
+
     getTemplate() { // возвращает разметку
         return createContactTemplate();
     }
+
+    _setClickHandler(path, handler) { // приватный метод
+        this.getElement().querySelector(path)
+        .addEventListener(`click`, handler);
+      }
+
+    setClickOnMailHandler(handler) { // public method realized click on mail
+        this._setClickHandler(`.contact-us__mail`, handler);
+      }
 }
