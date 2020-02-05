@@ -40,20 +40,7 @@ const createContactTemplate = () => {
 };
 
 export default class Contact extends AbstractComponent {
-    constructor() {
-        super();
-    }
-
     getTemplate() { // возвращает разметку
         return createContactTemplate();
     }
-
-    _setClickHandler(path, handler) { // приватный метод
-        this.getElement().querySelector(path)
-        .addEventListener(`click`, handler);
-      }
-
-    setClickOnMailHandler(handler) { // public method realized click on mail
-        this._setClickHandler(`.contact-us__mail`, handler);
-      }
 }

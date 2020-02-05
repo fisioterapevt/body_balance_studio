@@ -1,14 +1,15 @@
-// mobile&table
+// mobile
 .top-bar {
     position: relative;
 }
+
 .top-bar__wrap {
     display: none;
 }
 
 .top-bar__phone-icon {
     position: fixed;
-    top: 24px;
+    top: 13px;
     left: 24px;
 
     & svg {
@@ -20,6 +21,23 @@
 
 }
 
+.top-bar__feedback-icon {
+    position: fixed;
+    top: 53px;
+    left: 18px;
+    background: transparent;
+    padding: 0;
+
+    cursor: pointer;
+
+    & svg {
+        width: 36px;
+        height: 36px;
+
+        color: #a08a84;
+    }
+}
+// tablet
 @media (min-width: $tabletWidth) {
     .top-bar__phone-icon {
         top: 30px;
@@ -29,6 +47,16 @@
             width: 42px;
             height: 42px;
 
+        }
+    }
+
+    .top-bar__feedback-icon {
+        top: 19px;
+        left: 90px;
+
+        & svg {
+            width: 60px;
+            height: 60px;
         }
     }
 }
@@ -42,7 +70,8 @@
         background-color: #e6e6e6;
     }
 
-    .top-bar__phone-icon {
+    .top-bar__phone-icon,
+    .top-bar__feedback-icon {
         display: none;
     }
 

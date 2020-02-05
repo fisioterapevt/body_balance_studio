@@ -1,4 +1,4 @@
-
+import PopupMailComponent from './components/popup/popup-mail';
 
 import HeaderInnerComponent from './components/header-inner';
 import MainInnerComponent from './components/page-home/main-inner';
@@ -9,6 +9,7 @@ import PageController from './controllers/page-controller';
 import FooterController from './controllers/footer-controller';
 
 import PageModel from './models/pageModel';
+import PopupModel from './models/popupModel';
 
 import {render, RenderPosition} from './utils/render'
 
@@ -23,12 +24,14 @@ const siteFooterElement = document.querySelector(`.footer`);
   render(siteMainElement, mainInnerComponent, RenderPosition.BEFOREEND);
 
   const footerInnerComponent = new FooterInnerComponent();
-  render(siteFooterElement, footerInnerComponent, RenderPosition.BEFOREEND)
+  render(siteFooterElement, footerInnerComponent, RenderPosition.BEFOREEND);
 
 
-  const pageModel = new PageModel()
+  const pageModel = new PageModel();
 
-  const headerController = new HeaderController(headerInnerComponent, pageModel);
+  const popupModel = new PopupModel();
+
+  const headerController = new HeaderController(headerInnerComponent, pageModel, popupModel);
   headerController.render();
 
   const pageController = new PageController(mainInnerComponent, pageModel);
@@ -36,3 +39,6 @@ const siteFooterElement = document.querySelector(`.footer`);
 
   const footerController = new FooterController(footerInnerComponent, pageModel);
   footerController.render();
+
+  // const popupController = new PopupController(new PopupMailComponent(), popupModel);
+  // popupController.render();
