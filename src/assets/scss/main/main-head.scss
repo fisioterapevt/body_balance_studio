@@ -1,17 +1,17 @@
 .main-head {
-    margin-bottom: 40px;
+    margin-bottom: 24px;
     text-align: center;
 
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 5px;
+    padding-right: 5px;
 }
+
 
 .main-head__title {
     font-family: $secondary-font, serif;
     font-weight: 300;
-    font-size: $font-size-bigger;
+    font-size: rem(30);
     text-transform: uppercase;
-    line-height: 50px;
 
     margin-bottom: 15px;
 }
@@ -19,7 +19,23 @@
 .main-head__text {
     font-family: $main-font, serif;
     font-weight: 400;
-    font-size: $font-size-medium;
+    font-size: rem($font-size-smBig);
 
     color: $text-color-default-light;
+}
+
+// ##############################--TABLET--##########################
+@media (min-width: $tabletWidth) {
+    .main-head {
+        margin-bottom: 36px;
+    }
+}
+
+// ##############################--DESKTOP--##########################
+
+@media (min-width: $desktopWidth) {
+    .main-head {
+        margin-bottom: 55px;
+    }
+
 }

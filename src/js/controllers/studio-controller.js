@@ -1,7 +1,6 @@
-import MainStudioComponent from '../components/page-studio/studio';
-import AboutStudioComponent from '../components/page-studio/about-studio';
-// import MainBlocksComponent from '../components/page-home/main-blocks';
-// import MainQuotesComponent from '../components/page-home/main-quote';
+import StudioPageComponent from '../components/pages/page-studio/studio-page';
+import AboutStudioComponent from '../components/pages/page-studio/about-studio';
+import OurTeachersComponent from '../components/blocks/our-teachers/our-teachers';
 
 import {render, RenderPosition} from '../utils/render'
 
@@ -9,15 +8,17 @@ export default class MainStudioPageController {
     constructor(container) {
         this._container = container;
 
-        this._mainStudioComponent = new MainStudioComponent();
+        this._studioPageComponent = new StudioPageComponent();
         this._aboutStudioComponent = new AboutStudioComponent();
+        this._ourTeachersComponent = new OurTeachersComponent();
     }
 
     render() {
-        const container = this._container.getElement();
+        render(this._container.getElement(), this._studioPageComponent, RenderPosition.BEFOREEND); // отрисовывается слайдер на главной странице
 
-        render(container, this._mainStudioComponent, RenderPosition.BEFOREEND); // отрисовывается слайдер на главной странице
+        const container = this._studioPageComponent.getElement();
         render(container, this._aboutStudioComponent, RenderPosition.BEFOREEND);
+        render(container, this._ourTeachersComponent, RenderPosition.BEFOREEND);
     }
 
 }

@@ -1,33 +1,23 @@
+.logo {
+    z-index: 100;
+    margin: 5px;
+}
+
 .logo svg {
     width: 130px;
     height: 75px;
-
-    transition: margin-right linear 0.5s;
-}
-
-.logo {
-    transition: margin-right linear 0.5s;
-}
-
-.logo--active {
-    margin-right: 200px;
-    transition: margin-right linear 0.5s;
 }
 
 @media (min-width: $tabletWidth) {
+    .logo {
+        margin: 14px;
+    }
     .logo svg {
         width: 200px;
         height: 85px;
-        transition: margin-right linear 0.5s;
     }
-
-    .logo--active {
-        margin-right: 300px;
-        transition: margin-right linear 0.5s;
-    }
-
 }
-
+// ##############################--DESKTOP--##########################
 @media (min-width: $desktopWidth) {
     .logo {
         margin-bottom: 40px;
@@ -36,9 +26,5 @@
             width: 350px;
             height: 150px;
         }
-    }
-
-    .logo--active {
-        margin-right: 0;
     }
 }

@@ -1,13 +1,11 @@
 .header-inner {
-    position: relative;
+    // position: fixed;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 
-    width: 100%;
-
-    background-color: $default-color;
+    height: 100%;
 }
 
 @media(max-width: $desktopWidth) {
@@ -16,14 +14,32 @@
         top: 0;
         left: 0;
 
+
         z-index: 100;
-        min-height: 100px;
-        transition: min-height linear .5s;
+
+        width: 100%;
+        height: 100px;
+
+        background-color: $default-color;
+
+
+        // background-color: rgb(0, 241, 72);
+        // transform: translateX(0%);
+        // transition: transform 0.3s linear;
     }
 
+    // .header-inner--active {
+    //     transform: translateX(-60%);
+    //     transition: transform 0.3s linear;
+    // }
+
+}
+// ##############################--DESKTOP--##########################
+@media(min-width: $desktopWidth) {
     .header-inner--active {
-        min-height: 180px;
-        transition: min-height linear 0.5s;
+        // display: none;
+        // flex-direction: column;
+        // justify-content: center;
+        // align-items: center;
     }
-
 }

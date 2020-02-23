@@ -1,8 +1,8 @@
 // import FooterContactsComponent from '../components/footer/footer-contacts';
-import PoweredByComponent from '../components/powered-by';
-import SocialComponent from '../components/social';
-import LogoComponent from '../components/logo';
-import ContactComponent from '../components/contact/contact';
+import PoweredByComponent from '../components/blocks/powered-by/powered-by';
+import SocialComponent from '../components/blocks/social/social';
+import LogoComponent from '../components/blocks/logo/logo';
+import ContactComponent from '../components/blocks/contact/contact';
 
 import {
   render,
@@ -27,7 +27,7 @@ export default class FooterController {
     const container = this._container.getElement();
     render(container, this._logoComponent, RenderPosition.BEFOREEND);
     render(container, this._socialComponent, RenderPosition.BEFOREEND);
-    // render(container, this._poweredByComponent, RenderPosition.BEFOREEND);
+    render(container, this._poweredByComponent, RenderPosition.BEFOREEND);
 
     if (window.innerWidth >= 1280) { // если экран равен или больше 1280 запускает метод для отрисовки блока с контактами
       this._renderContactComponent();

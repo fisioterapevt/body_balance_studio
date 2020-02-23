@@ -1,9 +1,9 @@
-import HomeWrapComponent from '../components/page-home/home-wrap';
-import MainSliderComponent from '../components/page-home/main-slider';
-import MainHeadComponent from '../components/page-home/main-head';
-import MainBlocksComponent from '../components/page-home/main-blocks';
-import MainQuotesComponent from '../components/page-home/main-quote';
-import ContactComponent from '../components/contact/contact';
+import HomePageComponent from '../components/pages/page-home/home-page';
+import MainSliderComponent from '../components/blocks/slider/main-slider';
+import MainHeadComponent from '../components/pages/page-home/main-head';
+import MainBlocksComponent from '../components/pages/page-home/main-blocks';
+import MainQuotesComponent from '../components/blocks/quote/main-quote';
+import ContactComponent from '../components/blocks/contact/contact';
 
 import {
   render,
@@ -16,7 +16,7 @@ export default class HomePageController {
     this._container = container;
     this._pageModel = pageModel;
 
-    this._homeWrapComponent = new HomeWrapComponent();
+    this._homePageComponent = new HomePageComponent();
     this._mainSliderComponent = new MainSliderComponent();
     this._mainHeadComponent = new MainHeadComponent();
     this._mainBlocksComponent = new MainBlocksComponent();
@@ -25,11 +25,10 @@ export default class HomePageController {
   }
 
   render() {
-    const container = this._container.getElement();
-    render(container, this._homeWrapComponent, RenderPosition.BEFOREEND);
+    render(this._container.getElement(), this._mainSliderComponent, RenderPosition.BEFOREEND); // отрисовывается слайдер на главной странице
+    render(this._container.getElement(), this._homePageComponent, RenderPosition.BEFOREEND);
 
-    const homeContainer = this._homeWrapComponent.getElement();
-    render(homeContainer, this._mainSliderComponent, RenderPosition.BEFOREEND); // отрисовывается слайдер на главной странице
+    const container = this._homePageComponent.getElement();
 
     const sldrElems = this._mainSliderComponent.getElement().querySelectorAll(`.main-slider__item`); // массив слайдеров
     let current = 0; // по умолчанию индекс текущего слайдера
@@ -59,9 +58,9 @@ export default class HomePageController {
       this._changeSlide(sldrElems, current)
     });
 
-    render(homeContainer, this._mainHeadComponent, RenderPosition.BEFOREEND); // заголовок на главной
-    render(homeContainer, this._mainBlocksComponent, RenderPosition.BEFOREEND); // блоки на главной
-    render(homeContainer, this._mainQuotesComponent, RenderPosition.BEFOREEND); // цитата на главной
+    render(container, this._mainHeadComponent, RenderPosition.BEFOREEND); // заголовок на главной
+    render(container, this._mainBlocksComponent, RenderPosition.BEFOREEND); // блоки на главной
+    render(container, this._mainQuotesComponent, RenderPosition.BEFOREEND); // цитата на главной
 
     if (window.innerWidth < 1280) { // если экран равен или больше 1280 запускает метод для отрисовки блока с контактами
       this._renderContactComponent();
@@ -80,7 +79,7 @@ export default class HomePageController {
   }
 
   _renderContactComponent() { // отрисовывает блок контактов навешивает обработчик клика для отрытия попапа
-    render(this._homeWrapComponent.getElement(), this._contactComponent, RenderPosition.BEFOREEND); // отрисовывает контакты на главной в футере
+    render(this._homePageComponent.getElement(), this._contactComponent, RenderPosition.BEFOREEND); // отрисовывает контакты на главной в футере
   }
 
   _changeSlide(sldrElems, current) {

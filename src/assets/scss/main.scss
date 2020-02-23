@@ -1,8 +1,10 @@
+
+@import "/utils/mixins";
 @import "/utils/font";
-@import "/utils/variables";
 @import "/utils/reset";
 
 @import "/header/header";
+@import "/utils/variables";
 @import "/header/header-inner";
 @import "/header/top-bar";
 @import "/header/main-nav";
@@ -14,7 +16,15 @@
 @import "/main/main-blocks";
 @import "/main/main-quote";
 
-@import "/main/home/home-wrap";
+@import "/main/home/home-page";
+
+@import "/main/studio/our-teachers";
+@import "/main/studio/studio-page";
+
+@import "/main/classes/classes-page";
+@import "/main/classes/our-classes";
+
+@import "/main/contact/contact-page";
 
 @import "/footer/footer";
 @import "/footer/footer-inner";
@@ -26,88 +36,129 @@
 @import "/contact/contact";
 @import "/logo/logo";
 @import "/map/map";
+@import "/overlay/overlay";
+
 @import "/mail/mail";
-
-
+@import "/mail/error";
+@import "/mail/success";
 
 html {
-    box-sizing: border-box;
+  box-sizing: border-box;
+  font-size: $mainFontSize;
+  height: 100%;
+
+  @media screen and (min-width: $bigDesktopWidth) {
+    font-size: 20px;
+  }
+
+  @media screen and (max-width: $bigDesktopWidth) {
+    font-size: 18px;
+  }
+
+  @media screen and (max-width: $desktopWidth) {
+    font-size: 16px;
+  }
+
+  @media screen and (max-width: $smDesktopWidth) {
+    font-size: 15px;
+  }
+
+  @media screen and (max-width: $tabletWidth) {
+    font-size: 14px;
+  }
+
+  @media screen and (max-width: $phoneWidth) {
+    font-size: 13px;
+  }
+
+  @media screen and (max-width: $smPhoneWidth) {
+    font-size: 12px;
+  }
 }
 
 body {
-    min-width: $smPhoneWidth;
-    font-family: $main-font;
-    font-size: $font-size-default;
-    font-weight: $font-weight-default;
-    font-style: normal;
-    line-height: 26px;
-    color: $text-color-default;
+  position: relative;
+  left: 0;
+  transition: left 0.3s linear;
 
-    // background: rgb(242, 255, 187);
+  min-width: $smPhoneWidth;
+  font-family: $main-font;
+  font-size: $mainFontSize;
+  font-weight: $font-weight-default;
+  font-style: normal;
+  line-height: 26px;
+  color: $text-color-default;
+  // background-color: rgb(216, 243, 119);
+}
+
+@media(max-width: $desktopWidth) {
+
+  .body--active {
+    // top: 60%;
+    // transition: top 0.3s linear;
+
+    // & .body__overlay {
+    //   position: absolute;
+
+    //   width: 100%;
+    //   height: 100%;
+    //   z-index: 99;
+
+    //   background-color: rgba(0, 0, 0, 0.096);
+    // }
+  }
+}
+
+.container {
+  padding: 5px 15px;
+}
+
+@media (min-width: 768px) {
+
+  // body {
+  //   background-color: rgb(119, 243, 167);
+  // }
+
+  .container {
+    padding: 10px 35px;
+  }
 }
 
 
-// .container {
-//     margin: 0 auto;
-//     // padding: 0 15px;
-//     background-color: #b7fdc0;
-// }
-
-// .section {
-//     position: relative;
-//     // padding: 15px 0;
-// }
-
-// @media (min-width: $tabletWidth) {
-//     .container {
-//         padding: 0 30px;
-//         background-color: #a0a2fa;
-//     }
-
-//     .section {
-//         // position: relative;
-//         padding: 30px 0;
-//     }
-// }
+@media (min-width: 1280px) {
+  // body {
+  //   background-color: rgb(243, 119, 129);
+  // }
+  .container {
+    padding: 20px 50px;
+  }
+}
 
 
-// @media (min-width: $tabletWidth) {
-//     .container {
-//         // padding: 0 40px;
-//         background-color: #ffa7a7;
-//     }
 
-//     .section {
-//         // position: relative;
-//         // padding: 40px 0;
-//     }
-// }
-
-// @media (min-width: $smDesktopWidth) {
-//     .container {
-//         // padding: 0 40px;
-//         background-color: #ddca23;
-//     }
-
-//     .section {
-//         // position: relative;
-//         // padding: 40px 0;
-//     }
-// }
+// ##############################--DESKTOP--##########################
+@media (min-width: 1280px) {
+  // body {
+  //   background-color: rgb(243, 119, 129);
+  // }
+  .container {
+    padding: 20px 50px;
+  }
+}
 
 // .visually-hidden:not(:focus):not(:active)
 .visually-hidden {
-    position: absolute;
+  position: absolute;
 
-    width: 1px;
-    height: 1px;
-    margin: -1px;
-    border: 0;
-    padding: 0;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
 
-    white-space: nowrap;
+  white-space: nowrap;
 
-    clip-path: inset(100%);
-    clip: rect(0 0 0 0);
-    overflow: hidden;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }

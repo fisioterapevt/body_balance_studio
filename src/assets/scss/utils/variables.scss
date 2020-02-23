@@ -7,12 +7,16 @@ $secondary-font: 'Roboto', Helvetica, Arial, sans-serif;
 $font-weight-thin           : 100;
 $font-weight-light          : 300;
 $font-weight-default        : 400;
+$font-weight-medium         : 500;
+$font-weight-semibold       : 700;
 $font-weight-bold           : 900;
 
-$font-size-smBig            : 18px;
-$font-size-default          : 16px;
+$mainFontSize               : 18px;
 $font-size-smaller          : 12px;
 $font-size-medium           : 14px;
+$font-size-default          : 16px;
+$font-size-smBig            : 18px;
+$font-size-big              : 24px;
 $font-size-bigger           : 30px;
 
 // Size screen
@@ -31,17 +35,19 @@ $retina-dppx                : 1.5dppx;
 $text-color-default         : #585858;
 $text-color-default-light   : #686868;
 $text-color-default-lighter : #b4b4b4;
-$text-color-default-dark    : #505050;
+$text-color-default-dark    : #3f3f3f;
 $text-color-hover           : #efb821;
 $text-color-active          : #64c5c1;
 $text-color-success         : #7bc549;
 $text-color-average         : #e49a27;
 $text-color-danger          : #f01010;
+$text-color-required        : #790000;
 
 // Text specific
 $text-color-primary         : #a08a84;
 $text-color-secondary       : #5a4a45;
 $text-color-tertiary        : #505050;
+$text-color-background-menu : #ffd7cc;
 
 // Main color
 $default-color              : #ffffff;

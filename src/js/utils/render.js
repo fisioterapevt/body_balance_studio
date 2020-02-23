@@ -38,3 +38,9 @@ export const render = (container, component, place) => { // вставляет �
       parentElement.replaceChild(newElement, oldElement);
     }
   };
+
+  export const renderComponent = (controller, container) => { // для отрисовки компонента с учетом контроллера
+    controller._container = container; // меняет контейнер в контроллере
+    controller.render();
+    return controller
+  };

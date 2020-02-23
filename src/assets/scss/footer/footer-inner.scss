@@ -2,10 +2,9 @@
     position: relative;
     display: flex;
 
-    // align-items: center;
+    margin: 0 auto;
     justify-content: center;
-
-    // max-width: 2560px;
+    max-width: $bigDesktopWidth;
 }
 
 .footer-inner .logo {
@@ -23,6 +22,18 @@
     & svg {
         width: 47px;
         height: 47px;
+    }
+}
+
+@media(max-width: $desktopWidth) {
+    .footer-inner {
+        transform: translateX(0%);
+        transition: transform 0.3s linear;
+    }
+
+    .footer-inner--active {
+        transform: translateX(-60%);
+        transition: transform 0.3s linear;
     }
 }
 
@@ -46,17 +57,14 @@
     }
 }
 
+// ##############################--DESKTOP--##########################
 @media (min-width: $desktopWidth) {
 
     .footer-inner {
         display: flex;
         flex-direction: row;
-        // flex-direction: row;
         align-items: unset;
-        // justify-content: flex-start;
         justify-content: space-between;
-        // min-width: 1280px;
-        // max-width: 2560px;
     }
 
     .footer-inner .logo {
@@ -70,7 +78,6 @@
 
     .footer-inner .social {
         margin: 0;
-        // margin-left: 124px;
 
         & svg {
             width: 100px;
@@ -86,7 +93,5 @@
 
     .footer-inner .map {
         display: none;
-//         margin-bottom: 10px;
-//         margin-top: 10px;
     }
 }

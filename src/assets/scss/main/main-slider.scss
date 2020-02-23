@@ -1,10 +1,8 @@
 .main-slider {
     position: relative;
     background-color: $neutral-secondary;
-    // max-width: $bigDesktopWidth;
-
     margin: 0 auto;
-    margin-bottom: 70px;
+    margin-bottom: 24px;
 
     width: 100%;
 }
@@ -58,14 +56,23 @@
 //     text-align: center;
 //     background-color: rgb(231, 52, 52);
 // }
-
+// ##############################--TABLET--##########################
 @media (min-width: $tabletWidth) {
+    .main-slider {
+        margin-bottom: 38px;
+    }
+
     .main-slider__list {
         min-height: 533px;
     }
 }
 
+// ##############################--DESKTOP--##########################
 @media (min-width: $desktopWidth) {
+    .main-slider {
+        margin-bottom: 54px;
+    }
+
     .main-slider__list {
         min-height: 711px;
     }
@@ -76,7 +83,8 @@
         display: block;
         background: url("/assets/img/images/arrow-left.png") no-repeat;
         background-size: contain;
-        &:hover{
+
+        &:hover {
             opacity: 1.0;
             transition: opacity 0.5s ease-in;
         }
@@ -89,7 +97,7 @@
         background: url("/assets/img/images/arrow-right.png") no-repeat;
         background-size: contain;
 
-        &:hover{
+        &:hover {
             opacity: 1.0;
             transition: opacity 0.5s ease-in;
         }

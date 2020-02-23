@@ -1,7 +1,19 @@
-.overlay {
+.contact-page .mail-form__overlay {
+    // не показывает блок обратной связи в контактах в мобильной и планшетной версии
+    display: none;
+}
+
+
+.mail-form__required {
+    // звездочка
+    color: $text-color-required;
+    margin-left: 2px;
+}
+
+.header-inner .mail-form__overlay {
     position: fixed;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     top: 0;
     left: 0;
     right: 0;
@@ -14,8 +26,8 @@
     /* Add a pointer on hover */
 }
 
-.mail-form {
-    position: fixed;
+.header-inner .mail-form {
+    position: relative;
 
     width: 80%;
     padding: 25px;
@@ -28,7 +40,7 @@
 
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -60%);
 
     &::after {
         background: #F9F9F9;
@@ -97,52 +109,26 @@
             display: block;
             height: 2px;
             width: 100%;
-            background: linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(182, 180, 180, 0.7) 42%, rgba(180, 178, 178, 0) 43%, rgba(168, 166, 166, 0) 50%, rgba(180, 178, 178, 0) 57%, rgba(182, 180, 180, 0.7) 58%, rgba(238, 237, 237, 0.3) 90%, rgba(255, 255, 255, 0) 100%);
+            background: linear-gradient(to left, rgba(255, 255, 255, 0) 0%, rgba(182, 180, 180, 0.7) 42%, rgba(180, 178, 178, 0) 43%, rgba(168, 166, 166, 0) 50%, rgba(180, 178, 178, 0) 57%, rgba(182, 180, 180, 0.7) 58%, rgba(238, 237, 237, 0.3) 90%, rgba(255, 255, 255, 0) 100%);
             /* W3C */
         }
     }
 }
 
-.mail-form__group {
-    position: relative;
+.header-inner .mail-form__group svg {
+
+        width: 15px;
+        height: 15px;
+
+        color: $text-color-default-light;
 }
 
 /** inputs and textarea**/
 .mail-form__lable {
-    margin-left: 23px;
+    position: relative;
+    // margin-left: 23px;
     font-family: $secondary-font;
     font-size: $font-size-smaller;
-
-    &::before {
-        display: block;
-        position: absolute;
-        content: "";
-        width: 12px;
-        height: 12px;
-        background-size: 12px 12px;
-        background-repeat: no-repeat;
-
-        background-color: #909399;
-
-        top: 8px;
-        left: 0px;
-    }
-}
-
-.mail-form__lable--name::before {
-    mask-image: url("/assets/img/man-icon.svg");
-}
-
-.mail-form__lable--phone::before {
-    mask-image: url("/assets/img/mobile-phone-icon.svg");
-}
-
-.mail-form__lable--email::before {
-    mask-image: url("/assets/img/email-message.svg");
-}
-
-.mail-form__lable--message::before {
-    mask-image: url("/assets/img/chat-icon.svg");
 }
 
 .mail-form__control {
@@ -198,7 +184,7 @@
     border: 1px solid $border-light;
     text-shadow: 0px 1px 1px #E8E8E8;
     background: $neutral-placeholder;
-    background: linear-gradient(top, $neutral-placeholder-dark 1%, $neutral-placeholder 100%);
+    background: linear-gradient(to top, $neutral-placeholder-dark 1%, $neutral-placeholder 100%);
     border-radius: 5px;
     box-shadow: 0px 1px 1px $default-color inset, 0 0 0px 3px $border-light;
     transition: all 0.2s linear;
@@ -206,7 +192,7 @@
     &:hover {
         color: #8f8f8f;
         border-color: #CECECE;
-        background: linear-gradient(top, $neutral-placeholder-darker 0%, $neutral-placeholder 100%);
+        background: linear-gradient(to top, $neutral-placeholder-darker 0%, $neutral-placeholder 100%);
         box-shadow: 0px 1px 1px $default-color inset, 0 0 0px 3px $border-lighter;
     }
 
@@ -215,7 +201,7 @@
         position: relative;
         top: 1px;
         color: $text-color-default-light;
-        background: linear-gradient(top, #dfdfdf 0%, $neutral-placeholder 100%);
+        background: linear-gradient(to top, #dfdfdf 0%, $neutral-placeholder 100%);
         box-shadow: 0px -1px 1px $default-color inset, 0 0 0px 3px $border-lighter;
     }
 }
@@ -223,6 +209,7 @@
 label {
     color: $text-color-default-light;
     transition: color 1s ease;
+    cursor: pointer;
 }
 
 label:hover {
@@ -239,9 +226,6 @@ label:hover:before {
     transition: color 1s ease;
 }
 
-p {
-    margin-bottom: 20px;
-}
 
 .indication {
     color: #878787;
@@ -254,19 +238,58 @@ p {
 .required {
     color: #E5224C;
 }
+
 // tablet
 @media (min-width: $tabletWidth) {
-    .mail-form {
+    .header-inner .mail-form {
         width: 60%;
     }
 
 }
-// desctop
+
+// ##############################--DESKTOP--##########################
 @media (min-width: $desktopWidth) {
-    .mail-form {
-        width: 550px;
-        min-height: 200px;
-        padding: 30px;
+    .header-inner .mail-form__overlay {
+        display: none;
+    }
+
+    .contact-page {
+
+        // стили для формы в меню КОНТАКТЫ
+        & .mail-form__overlay {
+            position: relative;
+            display: block;
+            width: 40%;
+        }
+
+        & .mail-form__close-btn {
+            display: none;
+        }
+
+        & .mail-form {
+            width: 100%;
+            padding: 20px;
+
+            background: #f9f9f9;
+            border: 1px solid #383838;
+            box-shadow: 0px 1px 6px #3F3F3F;
+
+            & legend {
+                display: none;
+            }
+        }
+
+        & .mail-form__lable {
+            position: relative;
+            font-size: $font-size-default;
+
+            margin-left: 6px;
+        }
+
+        & .mail-form__group svg {
+                width: 20px;
+                height: 20px;
+        }
     }
 
 }

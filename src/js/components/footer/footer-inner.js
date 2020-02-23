@@ -2,7 +2,7 @@ import AbstractComponent from '../abstract-component';
 
 const createFooterInnerTemplate = () => {
   return (
-    `<div class="footer-inner"></div>`
+    `<article class="footer-inner"></article>`
   );
 };
 

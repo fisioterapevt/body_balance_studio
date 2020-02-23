@@ -1,54 +1,32 @@
 .main-quote {
     display: flex;
     flex-direction: column;
-    // justify-content: center;
-    // align-items: center;
-    // width: 80%;
+
+    width: 90%;
 
     margin: 0 auto;
-    margin-bottom: 40px;
+    margin-bottom: 24px;
 
-    max-width: 960px;
+    max-width: $desktopWidth;
 
-    // background-color: rgb(147, 248, 206);
+    // background-color: rgb(241, 91, 91);
 }
 
 .main-quote__text {
-    font-size: $font-size-medium;
+    font-size: rem($font-size-smBig);
     line-height: 29px;
-
-    // margin:  0 57px;
-
-    // width: 80%;
-
-    margin-left: 10px;
-    margin-right: 10px;
-
-    // background-color: rgb(250, 242, 128);
 }
 
 .main-quote__autor {
+    font-size: rem($font-size-default);
     line-height: 39px;
     margin-right: 10px;
     text-align: right;
 }
 
+// ##############################--TABLET--##########################
 @media (min-width: $tabletWidth) {
-    .main-quote__text {
-        font-size: $font-size-default;
-    }
-
-    .main-quote__autor {
-        font-size: $font-size-smBig;
-    }
-}
-
-@media (min-width: $desktopWidth) {
-    .main-quote__text {
-        font-size: $font-size-default;
-    }
-
-    .main-quote__autor {
-        font-size: $font-size-smBig;
+    .main-quote {
+        width: 65%;
     }
 }

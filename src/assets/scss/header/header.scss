@@ -1,13 +1,14 @@
+
 .header {
     position: relative;
-    width: 100%;
     min-height: 100px;
-
-    background-color: rgb(197, 250, 195);
-    transition: min-height linear .5s;
 }
 
-.header--active {
-    min-height: 140px;
-    transition: min-height linear .3s;
+@media (min-width: 1280px) {
+    .header {
+        // background-color: rgb(243, 119, 129);
+        min-height: 250px;
+    }
 }
+
+

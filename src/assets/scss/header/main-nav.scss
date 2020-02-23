@@ -1,79 +1,59 @@
+//правило дествует до размера desktop
 @media(max-width: $desktopWidth) {
   .main-nav {
+    // position: fixed;
+    // top: 0;
+    // right: -100%;
+    // top: -100%;
+
     position: absolute;
     top: 0;
-    right: 0;
+    left: 0;
 
-    width: 55px;
-    height: 50px;
+    width: 100%;
+    // height: 200px;
+    // height: 100%;
+    // z-index: 100;
 
-    transition: right 0.7s linear; // возвращает в исходное положение за 0.7 сек
+    background-color: $default-color;
+
+    background-color: rgb(246, 19, 19);
   }
 
-  .main-nav__item {
-    // убирает видимость с последнего элемента к первому
-    opacity: 0;
-    transition: 0.2s;
+  .main-nav__list {
+    position: absolute;
+    top: -360px;
+    left: 0;
+    // z-index: -10;
+    // left: 0;
 
-    &:nth-child(1) {
-      transition-delay: 0.45s;
-    }
+    width: 100%;
+    // height: 100%;
+    min-height: 260px;
 
-    &:nth-child(2) {
-      transition-delay: 0.35s;
-    }
+    display: flex;
+    flex-direction: column;
 
-    &:nth-child(3) {
-      transition-delay: 0.25s;
-    }
+    justify-content: center;
+    align-items: center;
 
-    &:nth-child(4) {
-      transition-delay: 0.15s;
-    }
 
-    &:nth-child(5) {
-      transition-delay: 0.05s;
-    }
+    background-color: $default-color;
+
+    // background-color: rgb(53, 50, 233);
+    transition: top 0.5s linear;
+
   }
 
-  .main-nav--opened {
-    right: 120px;
-    transition: right 0.5s linear;
-
-    & .main-nav__item {
-      // добавляет видимость с первого элемента к последнему
-      opacity: 1;
-      transition: opacity 0.5s linear;
-
-      &:nth-child(1) {
-        transition-delay: 0.1s;
-      }
-
-      &:nth-child(2) {
-        transition-delay: 0.2s;
-      }
-
-      &:nth-child(3) {
-        transition-delay: 0.3s;
-      }
-
-      &:nth-child(4) {
-        transition-delay: 0.4s;
-      }
-
-      &:nth-child(5) {
-        transition-delay: 0.5s;
-      }
-    }
+  .main-nav__list--active {
+    top: 99px;
+    transition: top 0.5s linear;
   }
+
+
 
   // toogle Hamburger menu -closed- condition
   .toggle {
-    position: absolute;
-    z-index: 100;
-    top: 25px;
-    right: 35px;
-
     display: block;
     width: 40px;
     height: 40px;
@@ -125,7 +105,7 @@
     }
   }
 
-  .toggle--is-active span {
+  .toggle--active span {
     // делает прозрачным линию посередине
     background: transparent;
   }
@@ -133,7 +113,7 @@
   // анимация происходит после нажатия меню-гамбургер.
   // обратная анимация происходит в псевдоэлементах выше
   // в обратном порядке
-  .toggle--is-active span::before {
+  .toggle--active span::before {
     transform: rotate(-45deg);
     top: 0;
     // анимируется top за время линейно, затем срабатывает transform
@@ -141,63 +121,51 @@
     transition: top 0.2s linear, transform 0.2s ease-in 0.3s;
   }
 
-  .toggle--is-active span::after {
+  .toggle--active span::after {
     transform: rotate(45deg);
     top: 0;
     transition: top 0.2s linear, transform 0.2s ease-in 0.3s;
   }
 
-  .main-nav__list {
-    display: flex;
-    flex-direction: column;
-
-    margin-top: 10px;
-    margin-left: 60px;
-
-    // width: 200px;
-    // position: absolute;
-    // top: 0;
-    // right: -95px;
-    // right: 0px;
-
-    // margin-right: -300px;
-
-    // transition: all ease 2s;
-    // z-index: 50;
-
-    // background-color: rgb(177, 255, 170);
-
-
+  .main-nav__toggle {
+    position: fixed;
+    z-index: 100;
+    top: 29px;
+    right: 35px;
+    // top: 30px;
+    // left: -57px;
   }
 
-  .main-nav__list--active {
-    // margin-right: 0;
-  }
 
   .main-nav__link {
     position: relative;
     color: $text-color-primary;
     text-decoration: none;
-    text-transform: uppercase;
+    // text-transform: uppercase;
+
 
     font-family: $secondary-font;
-    font-size: $font-size-medium;
+    font-size: rem($font-size-big);
+    font-weight: $font-weight-semibold;
+    line-height: 36px;
+    letter-spacing: .2em;
+    // text-transform: uppercase;
+
     cursor: pointer;
   }
 
   .main-nav__link--active {
     color: $text-color-secondary;
-    position: relative;
+    // position: relative;
+  }
+
+  .main-nav__link--contacts {
+    display: none;
   }
 }
 
-// desktop
+// ##############################--DESKTOP--##########################
 @media (min-width: $desktopWidth) {
-
-  // .main-nav {
-  //     display: flex;
-  //     width: 100%;
-  // }
   .main-nav__list {
     position: relative;
     position: static;
@@ -210,23 +178,13 @@
     color: $text-color-primary;
     text-decoration: none;
     text-transform: uppercase;
-    font-size: 16px;
+    // font-size: 16px;
     padding: 0 14px;
 
     &:hover {
       color: $text-color-hover;
       transition: color .4s ease-in-out;
     }
-
-    // &:hover::before {
-    //   content: "";
-    //   position: absolute;
-    //   right: 0;
-    //   left: 0;
-    //   bottom: 30px;
-    //   height: 1px;
-    //   background: $text-color-primary;
-    // }
   }
 
   .main-nav__link--active {
@@ -244,8 +202,8 @@
     }
   }
 
+  // toogle Hamburger menu hidden
   .main-nav__toggle {
-    // toogle Hamburger menu hidden 
     display: none;
   }
 }
