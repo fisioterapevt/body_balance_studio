@@ -7,7 +7,7 @@ const createMainListBlocksTemplate = () => {
             <li class="main-blocks__item main-blocks__item--first" onclick="">
               <div class="main-blocks__slide bounce">
                   <div class="main-blocks__slide-icon">
-                    <svg width="90" height="90" viewBox="0 0 90 90">
+                    <svg width="297.12" height="300" viewBox="0 0 297.12 300">
                       <use xlink:href="assets/img/svg/sprite.svg#pilates-hundred"></use>
                     </svg>
                   </div>
@@ -21,8 +21,8 @@ const createMainListBlocksTemplate = () => {
             <li class="main-blocks__item main-blocks__item--second" onclick="">
               <div class="main-blocks__slide bounce">
                   <div class="main-blocks__slide-icon">
-                    <svg width="90" height="90" viewBox="0 0 90 90">
-                      <use xlink:href="assets/img/svg/sprite.svg#pilates-hundred"></use>
+                    <svg width="357.3" height="300" viewBox="0 0 357.34 300">
+                      <use xlink:href="assets/img/svg/sprite.svg#t-plank"></use>
                     </svg>
                   </div>
                   <h2 class="main-blocks__slide-head">Кому подходит Пилатес</h2>
@@ -35,8 +35,8 @@ const createMainListBlocksTemplate = () => {
             <li class="main-blocks__item main-blocks__item--third" onclick="">
               <div class="main-blocks__slide bounce">
                   <div class="main-blocks__slide-icon">
-                    <svg width="90" height="90" viewBox="0 0 90 90">
-                      <use xlink:href="assets/img/svg/sprite.svg#pilates-hundred"></use>
+                    <svg width="340.45" height="300" viewBox="0 0 340.45 300">
+                      <use xlink:href="assets/img/svg/sprite.svg#swan"></use>
                     </svg>
                   </div>
                   <h2 class="main-blocks__slide-head">Польза от Пилатес</h2>

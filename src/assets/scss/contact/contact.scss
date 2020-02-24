@@ -12,19 +12,17 @@
     cursor: pointer;
     margin-bottom: 8px;
 
-    & span {
-        margin-left: 7px;
-    }
+    // & span {
+    //     margin-left: 7px;
+    // }
 
     & svg {
-        width: 20px;
-        height: 20px;
+        width: 16px;
+        height: 16px;
+
+        margin-right: 5px;
     }
 
-}
-
-.contact-us__open-hours div {
-    margin-left: 7px;
 }
 
 .contact-us__link {
@@ -41,6 +39,14 @@
 
 .contact-us__open-hours {
     display: flex;
+
+    // & div {
+    //     // margin-left: 7px;
+    // }
+
+    & svg {
+        margin-top: 6px;
+    }
 }
 
 .contact-page {
@@ -78,18 +84,23 @@
         // background-color: rgb(168, 252, 200);
     }
 
-    .contact-us {
-        // margin-left: 38px;
-
-        // background-color: rgb(199, 148, 247);
-    }
-
     .contact-page {
 
         // стили меню КОНТАКТЫ планшет
         & .contact {
             width: 100%;
         }
+    }
+
+    .contact-us__item {
+
+        & svg {
+            width: 18px;
+            height: 18px;
+    
+            margin-right: 7px;
+        }
+    
     }
 }
 
@@ -119,5 +130,16 @@
         & .contact-us__open-hours {
             display: flex;
         }
+    }
+
+    .contact-us__item {
+
+        & svg {
+            width: 20px;
+            height: 20px;
+    
+            margin-right: 10px;
+        }
+    
     }
 }

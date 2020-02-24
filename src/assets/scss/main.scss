@@ -55,20 +55,24 @@ html {
     font-size: 18px;
   }
 
-  @media screen and (max-width: $desktopWidth) {
-    font-size: 16px;
+  @media screen and (max-width: 1480px) {
+    font-size: 17px;
   }
 
-  @media screen and (max-width: $smDesktopWidth) {
+  @media screen and (max-width: $desktopWidth) {
     font-size: 15px;
   }
 
-  @media screen and (max-width: $tabletWidth) {
+  @media screen and (max-width: $smDesktopWidth) {
     font-size: 14px;
   }
 
-  @media screen and (max-width: $phoneWidth) {
+  @media screen and (max-width: $tabletWidth) {
     font-size: 13px;
+  }
+
+  @media screen and (max-width: $phoneWidth) {
+    font-size: 12px;
   }
 
   @media screen and (max-width: $smPhoneWidth) {

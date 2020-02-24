@@ -15,7 +15,6 @@
     flex-direction: column;
 
     width: 90%;
-    // max-width: $tabletWidth;
 
     position: relative;
 }
@@ -32,6 +31,8 @@
     overflow: hidden;
 
     margin-bottom: 5px;
+
+    border-radius: 10px;
 
     &:hover>.main-blocks__slide {
         // при ховере действия происходят в другом блоке
@@ -50,6 +51,30 @@
         transition: 2s;
         cursor: pointer;
     }
+}
+
+
+.main-blocks__slide-icon {
+    display: flex;
+    margin-bottom: 10px;
+    justify-content: center;
+
+    & svg {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+.main-blocks__slide-head {
+    text-align: center;
+    color: $default-color;
+    font-size: rem($font-size-smBig);
+
+    line-height: 1.3em;
+    text-transform: uppercase;
+
+    padding-left: 22px;
+    padding-right: 22px;
 }
 
 .main-blocks__slide {
@@ -79,29 +104,7 @@
     opacity: 0;
 }
 
-.main-blocks__slide-icon {
-    display: flex;
-    margin-bottom: 40px;
-    justify-content: center;
-    & svg {
-        color: #fff;
-        width: 80px;
-        height: 80px;
-    }
-}
 
-
-
-.main-blocks__slide-head {
-    text-align: center;
-    color: $default-color;
-    font-size: $font-size-medium;
-    line-height: 1.3em;
-    text-transform: uppercase;
-
-    padding-left: 52px;
-    padding-right: 52px;
-}
 
 .main-blocks__hide-text {
     text-align: center;
@@ -112,8 +115,10 @@
     padding-bottom: 10px;
 
     font-family: $secondary-font, serif;
-    font-size: $font-size-default;
+    font-size: rem($font-size-smBig);
 }
+
+
 
 .main-blocks__hide-button {
     width: 100px;
@@ -141,44 +146,49 @@
 }
 
 .main-blocks__item--second {
-    background-color:$primary-color-light;
+    background-color: $primary-color-light;
 }
 
 .main-blocks__item--third {
     background-color: $primary-color-light;
 }
-// ##############################--TABLET--##########################
-@media (min-width: $tabletWidth) {
-    .main-blocks__item {
-        // min-height: 395px;
-    }
 
+// ##############################--TABLET--##########################
+@media (min-width: $tabletWidth) { 
     .main-blocks__list {
         width: 70%;
-        // max-width: $tabletWidth;
-
-// background-color: rgb(166, 243, 142);
     }
 }
+
 // ##############################--DESKTOP--##########################
 @media (min-width: $desktopWidth) {
     .main-blocks__list {
         flex-direction: row;
         justify-content: center;
         width: 75%;
-
-        // background-color: rgb(238, 106, 106);
     }
 
     .main-blocks__item {
-        width: 30%;
-        min-height: 420px;
+        width: 100%;
+        min-height: 540px;
+
         margin: 0 10px;
     }
 
     .main-blocks__hide-button {
         width: 175px;
         min-height: 50px;
+    }
+
+    .main-blocks__slide-icon {
+        display: flex;
+        margin-bottom: 20px;
+        justify-content: center;
+
+        & svg {
+            width: 100%;
+            height: 184px;
+        }
     }
 }
 
@@ -192,11 +202,11 @@
     }
 
     80% {
-        transform: translate(-50%, -150%);
+        transform: translate(-50%, -105%);
     }
 
     100% {
-        transform: translate(-50%, -140%);
+        transform: translate(-50%, -100%);
     }
 }
 
@@ -206,10 +216,10 @@
     }
 
     60% {
-        transform: translate(-50%, -30%);
+        transform: translate(-50%, 0%);
     }
 
     100% {
-        transform: translate(-50%, -10%);
+        transform: translate(-50%, 10%);
     }
 }
