@@ -27,7 +27,7 @@ export default class FooterController {
     const container = this._container.getElement();
     render(container, this._logoComponent, RenderPosition.BEFOREEND);
     render(container, this._socialComponent, RenderPosition.BEFOREEND);
-    render(container, this._poweredByComponent, RenderPosition.BEFOREEND);
+    // render(container, this._poweredByComponent, RenderPosition.BEFOREEND);
 
     if (window.innerWidth >= 1280) { // если экран равен или больше 1280 запускает метод для отрисовки блока с контактами
       this._renderContactComponent();

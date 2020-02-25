@@ -1,7 +1,7 @@
 import HomePageComponent from '../components/pages/page-home/home-page';
 import MainSliderComponent from '../components/blocks/slider/main-slider';
-import MainHeadComponent from '../components/pages/page-home/main-head';
-import MainBlocksComponent from '../components/pages/page-home/main-blocks';
+import MainHeadComponent from '../components/blocks/main-head/main-head';
+import MainBlocksComponent from '../components/blocks/main-blocks/main-blocks';
 import MainQuotesComponent from '../components/blocks/quote/main-quote';
 import ContactComponent from '../components/blocks/contact/contact';
 

@@ -37,7 +37,8 @@
     &:hover>.main-blocks__slide {
         // при ховере действия происходят в другом блоке
         animation-name: bounce;
-        animation-duration: 0.7s;
+        animation-duration: .8s;
+
         animation-fill-mode: forwards; // не дает вернуться обратно 
         cursor: pointer;
     }
@@ -48,7 +49,7 @@
         animation-fill-mode: forwards; // не дает вернуться в исходное положение пока действует ховер 
 
         opacity: 1;
-        transition: 2s;
+        transition: 3s;
         cursor: pointer;
     }
 }
@@ -154,7 +155,7 @@
 }
 
 // ##############################--TABLET--##########################
-@media (min-width: $tabletWidth) { 
+@media (min-width: $tabletWidth) {
     .main-blocks__list {
         width: 70%;
     }
@@ -189,37 +190,5 @@
             width: 100%;
             height: 184px;
         }
-    }
-}
-
-@keyframes bounce {
-    0% {
-        transform: translate(-50%, -50%);
-    }
-
-    20% {
-        transform: translate(-50%, -40%);
-    }
-
-    80% {
-        transform: translate(-50%, -105%);
-    }
-
-    100% {
-        transform: translate(-50%, -100%);
-    }
-}
-
-@keyframes bounce-one {
-    0% {
-        transform: translate(-50%, 150%);
-    }
-
-    60% {
-        transform: translate(-50%, 0%);
-    }
-
-    100% {
-        transform: translate(-50%, 10%);
     }
 }

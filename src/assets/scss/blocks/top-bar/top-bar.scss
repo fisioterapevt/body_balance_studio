@@ -12,11 +12,7 @@
 }
 
 
-
-// mobile
-
-
-
+// Begining style for Mobile
 .top-bar {
     // position: fixed;
     // left: 0;
@@ -25,7 +21,7 @@
     // width: 100px;
     // height: 100px;
     // z-index: 5;
-    
+
 }
 
 .top-bar__wrap {
@@ -62,7 +58,10 @@
         color: #a08a84;
     }
 }
-// tablet
+
+// End style for Mobile
+// #
+// Begining style for Tablet
 @media (min-width: $tabletWidth) {
     .top-bar__phone-icon {
         top: 30px;
@@ -86,7 +85,9 @@
     }
 }
 
-// ##############################--DESKTOP--##########################
+// End style for Tablet
+// #
+// Begining style for Desktop
 @media (min-width: $desktopWidth) {
     .top-bar {
         display: block;

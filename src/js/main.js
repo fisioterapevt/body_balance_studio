@@ -3,7 +3,7 @@ import MailComponent from './components/blocks/popup/mail';
 // import HeaderInnerComponent from './components/header-inner';
 import OverlayComponent from './components/blocks/overlay/overlay';
 
-import MainInnerComponent from './components/pages/page-home/main-inner';
+import MainInnerComponent from './components/main/main-inner';
 import FooterInnerComponent from './components/footer/footer-inner';
 
 import HeaderController from './controllers/header-controller';

@@ -1,3 +1,35 @@
+@keyframes bounce {
+  0% {
+      transform: translate(-50%, -50%);
+  }
+
+  20% {
+      transform: translate(-50%, -40%);
+  }
+
+  80% {
+      transform: translate(-50%, -113%);
+  }
+
+  100% {
+      transform: translate(-50%, -105%);
+  }
+}
+
+@keyframes bounce-one {
+  0% {
+      transform: translate(-50%, 150%);
+  }
+
+  60% {
+      transform: translate(-50%, -7%);
+  }
+
+  100% {
+      transform: translate(-50%, 0%);
+  }
+}
+
 @keyframes fly-upper {
 
     0%,

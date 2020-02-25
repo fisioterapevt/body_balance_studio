@@ -2,45 +2,53 @@
 @import "/utils/mixins";
 @import "/utils/font";
 @import "/utils/reset";
-
-@import "/header/header";
 @import "/utils/variables";
-@import "/header/header-inner";
-@import "/header/top-bar";
-@import "/header/main-nav";
-
-@import "/main/main";
-@import "/main/main-inner";
-@import "/main/main-slider";
-@import "/main/main-head";
-@import "/main/main-blocks";
-@import "/main/main-quote";
-
-@import "/main/home/home-page";
-
-@import "/main/studio/our-teachers";
-@import "/main/studio/studio-page";
-
-@import "/main/classes/classes-page";
-@import "/main/classes/our-classes";
-
-@import "/main/contact/contact-page";
-
-@import "/footer/footer";
-@import "/footer/footer-inner";
-@import "/powered/powered-by";
 
 @import "/animation/animation";
+//##### HEADER #####
+@import "/header/header";
+@import "/header/header-inner";
+//##### MAIN #####
+@import "/main/main";
+@import "/main/main-inner";
+//##### PAGES #####
+@import "/pages/home/home-page";
+@import "/pages/studio/studio-page";
+@import "/pages/classes/classes-page";
+@import "/pages/contact/contact-page";
+//##### FOOTER #####
+@import "/footer/footer";
+@import "/footer/footer-inner";
+//##### BLOCKS #####
+@import "blocks/top-bar/top-bar";
 
-@import "/social/social";
-@import "/contact/contact";
-@import "/logo/logo";
-@import "/map/map";
-@import "/overlay/overlay";
+@import "blocks/main-head/main-head";
+@import "blocks/main-blocks/main-blocks";
+@import "blocks/main-quote/main-quote";
+@import "blocks/main-nav/main-nav";
+@import "blocks/main-slider/main-slider";
 
-@import "/mail/mail";
-@import "/mail/error";
-@import "/mail/success";
+@import "blocks/our-classes/our-classes";
+@import "blocks/our-teachers/our-teachers";
+
+@import "blocks/about-studio/about-studio";
+@import "blocks/about-studio/about-studio__title";
+
+@import "blocks/social/social";
+@import "blocks/contact/contact";
+@import "blocks/logo/logo";
+@import "blocks/map/map";
+@import "blocks/overlay/overlay";
+
+@import "blocks/head/head";
+@import "blocks/title/title";
+@import "blocks/text/text";
+
+@import "blocks/mail/mail";
+@import "blocks/mail/error";
+@import "blocks/mail/success";
+
+@import "blocks/powered/powered-by";
 
 html {
   box-sizing: border-box;
@@ -95,33 +103,11 @@ body {
   // background-color: rgb(216, 243, 119);
 }
 
-@media(max-width: $desktopWidth) {
-
-  .body--active {
-    // top: 60%;
-    // transition: top 0.3s linear;
-
-    // & .body__overlay {
-    //   position: absolute;
-
-    //   width: 100%;
-    //   height: 100%;
-    //   z-index: 99;
-
-    //   background-color: rgba(0, 0, 0, 0.096);
-    // }
-  }
-}
-
 .container {
   padding: 5px 15px;
 }
 
 @media (min-width: 768px) {
-
-  // body {
-  //   background-color: rgb(119, 243, 167);
-  // }
 
   .container {
     padding: 10px 35px;
@@ -130,9 +116,7 @@ body {
 
 
 @media (min-width: 1280px) {
-  // body {
-  //   background-color: rgb(243, 119, 129);
-  // }
+
   .container {
     padding: 20px 50px;
   }

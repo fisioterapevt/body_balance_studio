@@ -1,0 +1,25 @@
+// Begining style for Mobile
+.text {
+    font-family: $main-font, serif;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    font-size: rem($font-size-smBig);
+
+    color: $text-color-default-light;
+}
+
+// End style for Mobile
+// #
+// Begining style for Tablet
+@media (min-width: $tabletWidth) {
+    
+}
+
+// End style for Tablet
+// #
+// Begining style for Desktop
+@media (min-width: $desktopWidth) {
+    
+}
+
+// End style for Deskop

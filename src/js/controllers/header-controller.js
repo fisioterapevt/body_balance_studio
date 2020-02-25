@@ -66,26 +66,6 @@ export default class HeaderController {
       } else {
         buttonHamburger.classList.add(`toggle--active`);
       }
-
-      // const footer = document.querySelector(`.footer-inner`);
-      // if (footer.classList.contains(`footer-inner--active`)) {
-      //   footer.classList.remove(`footer-inner--active`);
-      // } else {
-      //   footer.classList.add(`footer-inner--active`);
-      // }
-
-      // const main = document.querySelector(`.main`);
-      // if (main.classList.contains(`main--active`)) {
-      //   main.classList.remove(`main--active`);
-      // } else {
-      //   main.classList.add(`main--active`);
-      // }
-
-      // if (container.classList.contains(`header-inner--active`)) {
-      //   container.classList.remove(`header-inner--active`);
-      // } else {
-      //   container.classList.add(`header-inner--active`);
-      // }
     });
 
     this._navComponent.setClickOnMenuItemHandler(this._onMenuItemChange) // активирует обработчик клика на пункты меню в навигации находится в компоненте  main-nav.js

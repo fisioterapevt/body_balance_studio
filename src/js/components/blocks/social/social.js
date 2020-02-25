@@ -4,15 +4,15 @@ const createSocialTemplate = () => {
     return (
         `<ul class="social">
            <li>
-                <a href="https://www.facebook.com" class="social-icon" title="facebook">
-                  <svg width="50" height="50" viewBox="0 0 512 512">
+                <a href="https://www.facebook.com" title="facebook">
+                  <svg class="social-icon" width="50" height="50" viewBox="0 0 512 512">
                      <use xlink:href="assets/img/svg/sprite.svg#facebook"></use>
                    </svg>
                 </a>
            </li>
             <li>
-             <a href="https://www.instgram.com" class="social-icon" title="instagram">
-                <svg width="50" height="50" viewBox="0 0 512 512">
+             <a href="https://www.instgram.com" title="instagram">
+                <svg class="social-icon" width="50" height="50" viewBox="0 0 512 512">
                     <use xlink:href="assets/img/svg/sprite.svg#instagram"></use>
                 </svg>
              </a>

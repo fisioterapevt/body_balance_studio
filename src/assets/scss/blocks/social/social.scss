@@ -1,0 +1,48 @@
+// Begining style for Mobile
+.social {
+    display: flex;
+    align-items: center;
+    margin: 20px;
+}
+
+.social-icon {
+    margin: 10px;
+    color: $primary-color;
+
+    &:hover {
+        color: $neutral-secondary;
+    }
+}
+
+.footer-inner .social-icon {
+    width: 37px;
+    height: 37px;
+}
+// End style for Mobile
+// #
+// Begining style for Tablet
+@media (min-width: $tabletWidth) {
+    .footer-inner .social-icon {
+        width: 57px;
+        height: 57px;
+        margin: 14px;
+    }
+}
+// End style for Tablet
+// #
+// Begining style for Desktop
+@media (min-width: $desktopWidth) {
+    .social {
+        display: flex;
+        align-items: center;
+
+        margin-right: 40px;
+    }
+
+    .footer-inner .social-icon {
+        margin: 10px;
+
+        width: 67px;
+        height: 67px;
+    }
+}

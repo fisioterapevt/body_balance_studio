@@ -3,8 +3,8 @@ import AbstractComponent from '../../abstract-component';
 const createMainHeadTemplate = () => {
   return (
     `<div class="main-head">
-        <h2 class="main-head__title">Добро пожаловать в Body Balance</h2>
-        <p class="main-head__text">Пилатес студия Body Balance приглашает всех желающих привести себя в форму</p>
+        <h1 class="main-head__title head">Добро пожаловать в Body Balance</h1>
+        <p class="main-head__text text">Пилатес студия Body Balance приглашает всех желающих привести себя в форму</p>
     </div>`
   );
 };

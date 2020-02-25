@@ -1,3 +1,4 @@
+// Begining style for Mobile
 .footer-inner {
     position: relative;
     display: flex;
@@ -10,33 +11,15 @@
 .footer-inner .logo {
     margin-top: 10px;
     margin-bottom: 24px;
+    z-index: 0;
 
     & svg {
         width: 130px;
     }
 }
-
-.footer-inner .social {
-    // margin-top: 18px;
-
-    & svg {
-        width: 47px;
-        height: 47px;
-    }
-}
-
-@media(max-width: $desktopWidth) {
-    .footer-inner {
-        transform: translateX(0%);
-        transition: transform 0.3s linear;
-    }
-
-    .footer-inner--active {
-        transform: translateX(-60%);
-        transition: transform 0.3s linear;
-    }
-}
-
+// End style for Mobile
+// #
+// Begining style for Tablet
 @media (min-width: $tabletWidth) {
     .footer-inner .logo {
         margin-top: 10px;
@@ -46,18 +29,10 @@
             width: 200px;
         }
     }
-
-    .footer-inner .social {
-        // margin-top: 18px;
-
-        & svg {
-            width: 68px;
-            height: 68px;
-        }
-    }
 }
-
-// ##############################--DESKTOP--##########################
+// End style for Tablet
+// #
+// Begining style for Desktop
 @media (min-width: $desktopWidth) {
 
     .footer-inner {
@@ -76,22 +51,12 @@
         }
     }
 
-    .footer-inner .social {
-        margin: 0;
-
-        & svg {
-            width: 100px;
-            height: 100px;
-        }
-    }
-
     .footer-inner .contact {
-
         width: 400px;
-        // background-color: #fff;
     }
 
     .footer-inner .map {
         display: none;
     }
 }
+// End style for Desktop

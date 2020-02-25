@@ -1,0 +1,24 @@
+// Begining style for Mobile
+.about-studio {
+    margin-bottom: 20px;
+}
+
+// End style for Mobile
+// #
+// Begining style for Tablet
+@media (min-width: $tabletWidth) {
+    .about-studio {
+        margin-bottom: 28px;
+    }
+}
+
+// End style for Tablet
+// #
+// Begining style for Desktop
+@media (min-width: $desktopWidth) {
+    .about-studio {
+        margin-bottom: 36px;
+    }
+}
+
+// End style for Deskop
