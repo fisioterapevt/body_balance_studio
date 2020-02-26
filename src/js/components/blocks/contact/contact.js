@@ -4,9 +4,6 @@ const createContactTemplate = () => {
     return (
         `<section class="contact">
             <section class="contact-us">
-                <h2 class="contact-us__head visually-hidden">
-                    Остались вопросы? Свяжитесь с нами!
-                 </h2>
                 <ul class="contact-us__list">
                     <li class="contact-us__item">
                         <a class="contact-us__link contact-us__location" href="#">
@@ -43,10 +40,11 @@ const createContactTemplate = () => {
                         </div>
                     </li>
                 </ul>
-        </section>
-        <section class="map">
-            <h2 class="visually-hidden">Пилатес студия на карте города</h2>
-            <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A59bbcaa30455e57a81c5202af2f1678d83a77961b5ce07b553a3656a59840780&amp;source=constructor" width="500" height="400" frameborder="0"></iframe>
+            </section>
+            <section class="map">
+                <h2 class="visually-hidden">Пилатес студия на карте города</h2>
+                <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A59bbcaa30455e57a81c5202af2f1678d83a77961b5ce07b553a3656a59840780&amp;source=constructor" width="500" height="400" frameborder="0"></iframe>
+            </section>
         </section>`
     );
 };

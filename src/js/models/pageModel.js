@@ -1,6 +1,6 @@
 import {
     MenuItem
-} from '../components/blocks/navigation/main-nav.js'
+} from '../components/blocks/navigation/main-nav.js';
 
 export default class PageModel {
     constructor() {
@@ -26,5 +26,4 @@ export default class PageModel {
     _setChangeSizeScreenHandler(handler) { // слушает изменения в размере броузера
         window.addEventListener('resize', handler);
     }
-
 }

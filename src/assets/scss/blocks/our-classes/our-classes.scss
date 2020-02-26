@@ -59,7 +59,9 @@
 @media (min-width: $desktopWidth) {
     .our-classes {}
 
-    .our-classes__head {}
+    .our-classes__head {
+        margin-bottom: 8px;
+    }
 
     .our-classes__list {}
 

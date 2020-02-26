@@ -8,8 +8,9 @@ import ContactComponent from '../components/blocks/contact/contact';
 import {
   render,
   remove,
-  RenderPosition
-} from '../utils/render'
+  RenderPosition,
+  removeClass
+} from '../utils/render';
 
 export default class HomePageController {
   constructor(container, pageModel) {
@@ -67,6 +68,26 @@ export default class HomePageController {
     } else {
       remove(this._contactComponent);
     }
+
+    this._mainBlocksComponent.setClickOnFirstButtonHandler(() => { // при клике на кнопку блока на главной странице
+      this._pageModel.setMenuItem('studio'); // запустить изменение пункта меню
+      removeClass(`.main-nav__link`, 'main-nav__link--active'); // удаляет класс active
+      const linkStudio = document.querySelector(`.main-nav__link--studio`);
+      linkStudio.classList.add(`main-nav__link--active`); // добавляет целевому пункту меню класс main-nav__link--active
+    });
+
+    this._mainBlocksComponent.setClickOnSecondButtonHandler(() => {
+      this._pageModel.setMenuItem('classes');
+      removeClass(`.main-nav__link`, 'main-nav__link--active'); // удаляет класс active
+      const linkClasses = document.querySelector(`.main-nav__link--classes`);
+      linkClasses.classList.add(`main-nav__link--active`); // добавляет целевому пункту меню класс main-nav__link--active
+    });
+    this._mainBlocksComponent.setClickOnThirdButtonHandler(() => {
+      this._pageModel.setMenuItem('schedule');
+      removeClass(`.main-nav__link`, 'main-nav__link--active'); // удаляет класс active
+      const linkSchedule = document.querySelector(`.main-nav__link--schedule`);
+      linkSchedule.classList.add(`main-nav__link--active`); // добавляет целевому пункту меню класс main-nav__link--active
+    })
 
     this._pageModel._setChangeSizeScreenHandler(() => { // вызывается при изменении экрана метод находится в pageModel
       if (window.innerWidth < 1280) { //  если ширина экрана больше 1280

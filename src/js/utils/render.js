@@ -22,11 +22,6 @@ export const render = (container, component, place) => { // вставляет �
     return new Date().getTime();
   }
 
-  export const remove = (component) => {
-    component.getElement().remove();
-    component.removeElement();
-  };
-
   export const replace = (newComponent, oldComponent) => {
     const parentElement = oldComponent.getElement().parentElement;
     const newElement = newComponent.getElement();
@@ -43,4 +38,16 @@ export const render = (container, component, place) => { // вставляет �
     controller._container = container; // меняет контейнер в контроллере
     controller.render();
     return controller
+  };
+
+  export const remove = (component) => {
+    component.getElement().remove();
+    component.removeElement();
+  };
+
+  export const removeClass = (targetClass, delClass) => {
+    const elements = document.querySelectorAll(targetClass);
+    elements.forEach((element) => {
+      element.classList.remove(delClass);
+    })
   };

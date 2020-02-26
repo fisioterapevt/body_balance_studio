@@ -22,7 +22,7 @@ export default class ContactPageController {
     render() {
         const container = this._container.getElement();
         render(container, this._contactPageComponent, RenderPosition.BEFOREEND);
-        const contactContainer = this._contactPageComponent.getElement();
+        const contactContainer = this._contactPageComponent.getElement().querySelector('.contact-page__wrap');
 
         render(contactContainer, this._contactComponent, RenderPosition.BEFOREEND);
 

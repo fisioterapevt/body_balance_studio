@@ -127,7 +127,8 @@
 
     margin: 5px;
     border-radius: 1px;
-    background-color: $success-color;
+    background-color:  #b6869d;
+    border-radius: 5px;
 
     color: $default-color;
     text-transform: uppercase;
@@ -137,8 +138,9 @@
     cursor: pointer;
 
     &:hover {
-        background-color: $warning-color;
+        // background-color: #b6869d;
         border: 2px solid $default-color;
+
     }
 }
 

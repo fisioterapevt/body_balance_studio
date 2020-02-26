@@ -3,7 +3,7 @@ import AbstractComponent from '../../abstract-component';
 const createClassesPageTemplate = () => {
   return (
     `<section class="classes-page container">
-      <h1 class="visually-hidden">Классы по Пилатес</h1>
+      <h1 class="our-classes__head head">Групповые классы</h1>
     </section>`
   );
 };

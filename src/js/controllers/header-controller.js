@@ -71,7 +71,7 @@ export default class HeaderController {
     this._navComponent.setClickOnMenuItemHandler(this._onMenuItemChange) // активирует обработчик клика на пункты меню в навигации находится в компоненте  main-nav.js
 
     this._topBarComponent.setClickOnMailHandler(() => { // активирует обработчик клика на кнопку для отрытия попапа
-      renderComponent(this._mailController ,container);// передавая в модель контейнер куда отрисовывать
+      renderComponent(this._mailController, container);// передавая в модель контейнер куда отрисовывать
     });
   }
 
